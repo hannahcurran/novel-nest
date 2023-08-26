@@ -8,7 +8,7 @@ setUser(null);
 }
 
     return (<nav >
-        <span>Welcome, {user.name}</span>
+        <span>LOGO HERE</span>
         &nbsp; | &nbsp;
         <Link to="/books">Currently Reading </Link>
         &nbsp; | &nbsp;

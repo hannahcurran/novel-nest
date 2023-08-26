@@ -14,17 +14,20 @@ export default function App() {
   return (
     <main>
       {user ? (
+
         <>
           <NavBar user={user} setUser={setUser} />
+          <h1>Welcome, {user.name}!</h1>
+          <br />
           <Routes>
             <Route path="/books" element={< CurrentlyReadingPage user={user} />} />
-            <Route path="/books/wanttoread" element={<WantToReadPage />} />
-            <Route path="/books/read" element={<ReadBooksPage />} />
+            <Route path="/books/wanttoread" element={<WantToReadPage user={user} />} />
+            <Route path="/books/read" element={<ReadBooksPage user={user} />} />
           </Routes>
 
-        
 
-                </>
+
+        </>
       ) : (
         <AuthPage setUser={setUser} />
       )}

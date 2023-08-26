@@ -33,6 +33,15 @@ export default function CurrentlyReadingPage({ user }) {
 
     }
 
+    async function handleDeleteBook(bookId) {
+        try {
+            await currentBookAPI.deleteCurrentBook(bookId);
+            setCurrentBooks(currentBooks.filter(book => book._id !== bookId));
+        } catch (error) {
+            console.error('Error deleting book:', error);
+        }
+    }
+    
 
 
     useEffect(() => {
@@ -41,13 +50,19 @@ export default function CurrentlyReadingPage({ user }) {
 
     return (
         <>
-            <h1>Current Reading List</h1>
+            <h1>Your Current Reading List</h1>
+
+            <ul className="currentBooks-container">
+                        {currentBooks.map((currentBook, idx) => (
+                            <CurrentBookCard key={currentBook._id} currentBook={currentBook} handleDeleteBook={handleDeleteBook} />
+                        ))}
+                    </ul>
             <form className="currentlyReadingForm">
 
                 <div className="input-container">
                     <input
                         type="text"
-                        placeholder="Book Title"
+                        placeholder="Title"
                         name="title"
                         value={newCurrentBook.title}
                         onChange={handleChange}
@@ -60,16 +75,12 @@ export default function CurrentlyReadingPage({ user }) {
                         onChange={handleChange}
                     />
                     <div className='submit-btn'>
-                        <button type="submit" onClick={handleNewCurrent}>Add Book</button>
+                        <button type="submit" onClick={handleNewCurrent}>Add To List</button>
                     </div>
 
 
 
-                    <ul className="currentBooks-container">
-                        {currentBooks.map((currentBook, idx) => (
-                            <CurrentBookCard key={currentBook._id} currentBook={currentBook} />
-                        ))}
-                    </ul>
+                   
                 </div>
             </form>
 

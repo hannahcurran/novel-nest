@@ -10,3 +10,7 @@ export async function getCurrentBook(){
 
     return sendRequest(`${BASE_URL}/getCurrentBook`)
 }
+
+export async function deleteCurrentBook(bookId) {
+    return sendRequest(`${BASE_URL}/deleteCurrentBook/${bookId}`, 'DELETE');
+}

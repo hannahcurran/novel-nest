@@ -7,6 +7,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 //all paths start with '/api/users'
 router.post('/addCurrentBook', ensureLoggedIn, currentBooksCtrl.addCurrentBook);
 router.get('/getCurrentBook', ensureLoggedIn, currentBooksCtrl.getCurrentBook);
+router.delete('/deleteCurrentBook/:bookId', ensureLoggedIn, currentBooksCtrl.deleteCurrentBook);
 
 module.exports = router;
 

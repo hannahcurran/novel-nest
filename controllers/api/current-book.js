@@ -21,4 +21,15 @@ async function getCurrentBook(req, res) {
     }
 }
 
-module.exports = { addCurrentBook, getCurrentBook };
+async function deleteCurrentBook(req, res) {
+    try {
+        const bookId = req.params.bookId;
+        await Book.findByIdAndDelete(bookId);
+        res.json({ message: 'Book deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error deleting book' });
+    }
+}
+
+module.exports = { addCurrentBook, getCurrentBook, deleteCurrentBook };
