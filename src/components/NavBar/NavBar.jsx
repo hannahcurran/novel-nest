@@ -7,13 +7,14 @@ userService.logOut();
 setUser(null);
 }
 
-    return (<nav>
+    return (<nav >
         <span>Welcome, {user.name}</span>
         &nbsp; | &nbsp;
-        <Link to="/orders">Order History </Link>
+        <Link to="/books">Currently Reading </Link>
         &nbsp; | &nbsp;
-       
-        <Link to="/orders/new">New Order </Link>
+       <Link to="/books/read">Read </Link>
+        &nbsp; | &nbsp;
+        <Link to="/books/wanttoread">Want To Read </Link>
         &nbsp; | &nbsp;
         
         <Link to="" onClick={handleLogOut}>Log Out</Link>
