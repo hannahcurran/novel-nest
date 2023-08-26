@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import CurrentBookCard from '../CurrentBookCard/CurrentBookCard';
 import * as currentBookAPI from "../../utilities/current-book-api";
+// import { updateCurrentBookStatus } from "../../utilities/current-book-api";
+
 
 export default function CurrentlyReadingPage({ user }) {
     const [currentBooks, setCurrentBooks] = useState([]);
+    const [finishedBooks, setFinishedBooks] = useState([]);
     const [newCurrentBook, setNewCurrentBook] = useState({
         title: '',
         author: '',
@@ -41,6 +44,17 @@ export default function CurrentlyReadingPage({ user }) {
             console.error('Error deleting book:', error);
         }
     }
+
+    // async function handleFinished(bookId) {
+    //     try {
+    //         const finishedBook = currentBooks.find(book => book._id === bookId);
+    //         await currentBookAPI.updateCurrentBookStatus(bookId, 'finished');
+    //         setFinishedBooks([...finishedBooks, finishedBook]);
+    //         setCurrentBooks(currentBooks.filter(book => book._id !== bookId));
+    //     } catch (error) {
+    //         console.error('Error marking book as finished:', error);
+    //     }
+    // }
     
 
 
@@ -53,10 +67,12 @@ export default function CurrentlyReadingPage({ user }) {
             <h1>Your Current Reading List</h1>
 
             <ul className="currentBooks-container">
-                        {currentBooks.map((currentBook, idx) => (
-                            <CurrentBookCard key={currentBook._id} currentBook={currentBook} handleDeleteBook={handleDeleteBook} />
-                        ))}
-                    </ul>
+                {currentBooks.map((currentBook, idx) => (
+                    <CurrentBookCard key={currentBook._id} currentBook={currentBook} 
+                        onDelete={handleDeleteBook} />
+                        //add onFinished={handleFinished} 
+                ))}
+            </ul>
             <form className="currentlyReadingForm">
 
                 <div className="input-container">
@@ -80,7 +96,7 @@ export default function CurrentlyReadingPage({ user }) {
 
 
 
-                   
+
                 </div>
             </form>
 

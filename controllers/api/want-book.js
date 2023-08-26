@@ -1,27 +1,27 @@
 // const jwt = require('jsonwebtoken');
 const Book = require('../../models/book');
 
-async function addCurrentBook(req, res) {
+async function addWantBook(req, res) {
     try {
-        const newCurrentBook = await Book.create(req.body);
-        res.json(newCurrentBook);
+        const newWantBook = await Book.create(req.body);
+        res.json(newWantBook);
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error adding current book' });
     }
 }
 
-async function getCurrentBook(req, res) {
+async function getWantBook(req, res) {
     try {
-        const getCurrentBook = await Book.find({ user: req.user._id }).exec();
-        res.json(getCurrentBook);
+        const getWantBook = await Book.find({ user: req.user._id }).exec();
+        res.json(getWantBook);
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error fetching current books' });
     }
 }
 
-async function deleteCurrentBook(req, res) {
+async function deleteWantBook(req, res) {
     try {
         const bookId = req.params.bookId;
         await Book.findByIdAndDelete(bookId);
@@ -32,4 +32,4 @@ async function deleteCurrentBook(req, res) {
     }
 }
 
-module.exports = { addCurrentBook, getCurrentBook, deleteCurrentBook };
+module.exports = { addWantBook, getWantBook, deleteWantBook };

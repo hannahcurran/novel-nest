@@ -29,6 +29,7 @@ app.use(require('./config/checkToken'));
 app.use('/api/users', require('./routes/api/users'));
 // app.use('/api/current-book', currentBooks);
 app.use('/api/current-book', require('./routes/api/currentBooks'));
+app.use('/api/want-book', require('./routes/api/wantBooks'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
