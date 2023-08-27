@@ -1,5 +1,6 @@
 // const jwt = require('jsonwebtoken');
 const Book = require('../../models/book');
+module.exports = { addReadBook, getReadBook, deleteReadBook, updateReview };
 
 async function addReadBook(req, res) {
     try {
@@ -32,4 +33,22 @@ async function deleteReadBook(req, res) {
     }
 }
 
-module.exports = { addReadBook, getReadBook, deleteReadBook };
+async function updateReview(req, res) {
+    const bookId = req.params.bookId;
+    const newReview = req.body.review;
+
+    try {
+        const updatedBook = await Book.findByIdAndUpdate(
+            bookId,
+            { $set: { review: newReview } },
+            { new: true }
+        );
+        res.json(updatedBook);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error updating review' });
+    }
+}
+
+
+

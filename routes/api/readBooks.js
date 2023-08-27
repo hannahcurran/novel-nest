@@ -8,5 +8,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.post('/addReadBook', ensureLoggedIn, readBooksCtrl.addReadBook);
 router.get('/getReadBook', ensureLoggedIn, readBooksCtrl.getReadBook);
 router.delete('/deleteReadBook/:bookId', ensureLoggedIn, readBooksCtrl.deleteReadBook);
+router.put('/updateReview/:bookId', readBooksCtrl.updateReview);
+
 
 module.exports = router;

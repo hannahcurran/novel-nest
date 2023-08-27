@@ -14,6 +14,7 @@ export default function ReadBooksPage({ user }) {
         author: '',
         user: user
     });
+    const [editingReview, setEditingReview] = useState(null);
 
     function handleChange(evt) {
         setNewReadBook({ ...newReadBook, [evt.target.name]: evt.target.value });
@@ -29,7 +30,7 @@ export default function ReadBooksPage({ user }) {
             const newBookData = { ...newReadBook, user: user._id, status: 'read', review: review };
             const addedBook = await readBookAPI.addReadBook(newBookData);
             setReadBooks([...readBooks, addedBook]);
-            setNewReadBook({ title: '', author: '', review: ''});
+            setNewReadBook({ title: '', author: '', review: '' });
             setReview('');
         } catch (error) {
             console.error('Error adding book:', error);
@@ -51,6 +52,32 @@ export default function ReadBooksPage({ user }) {
         }
     }
 
+    function handleEdit(review) {
+        setEditingReview(review);
+    }
+
+    async function handleSaveEdit(reviewId, newReviewContent) {
+        try {
+            // Update the review content in API
+            await readBookAPI.updateReview(reviewId, newReviewContent);
+
+            // Update the local state with the new review content
+            setReadBooks(prevReadBooks =>
+                prevReadBooks.map(book => {
+                    if (book._id === reviewId) {
+                        return { ...book, review: newReviewContent };
+                    }
+                    return book;
+                })
+            );
+
+            setEditingReview(null); // Exit edit mode
+        } catch (error) {
+            console.error('Error updating review:', error);
+        }
+    }
+
+
     useEffect(() => {
         getReadBook()
     }, [])
@@ -59,20 +86,12 @@ export default function ReadBooksPage({ user }) {
 
     return (
 
-
-        // <div> <h2>Read Book Details</h2>
-        //     <p>Title: </p>
-        //     <p>Author: </p>
-        //     <p>Review:</p>
-
-        // </div>
-
         <>
             <h2>Read Books & Reviews</h2>
 
             <ul className="readBooks-container">
                 {readBooksToShow.map((readBook, idx) => (
-                    <ReadBookCard key={readBook._id} readBook={readBook} onDelete={handleDeleteBook} />
+                    <ReadBookCard key={readBook._id} readBook={readBook} onDelete={handleDeleteBook} onEdit={handleEdit} />
 
                 ))}
             </ul>
@@ -104,7 +123,19 @@ export default function ReadBooksPage({ user }) {
                     <div className='submit-btn'>
                         <button type="submit" onClick={handleNewRead}>Add</button>
                     </div>
-
+                    {editingReview && (
+                        <div>
+                            <input
+                                type="text"
+                                value={editingReview.review}
+                                onChange={e => setEditingReview({ ...editingReview, review: e.target.value })}
+                            />
+                            <button onClick={() => handleSaveEdit(editingReview._id, editingReview.review)}>
+                                Save Edit
+                            </button>
+                            <button onClick={() => setEditingReview(null)}>Cancel</button>
+                        </div>
+                    )}
 
 
 
