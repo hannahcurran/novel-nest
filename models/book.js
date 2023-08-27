@@ -7,7 +7,8 @@ const bookSchema = new Schema({
     author:{ type: String, required: true},
     finished: {type: Boolean},
     status: { type: String, enum: ['currently reading', 'want to read' ,'read'], required: true }, 
-    user: { type: ObjectId, required: true }
+    user: { type: ObjectId, required: true },
+    review: {type: String}
 });
 
 module.exports = mongoose.model('Book', bookSchema);

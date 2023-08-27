@@ -24,7 +24,7 @@ import React from 'react';
 //             <p>Title: {currentBook.title}</p>
 //             <p>Author: {currentBook.author}</p>
 //             <button onClick={() => onFinished(currentBook)}>Finished</button>
-            
+
 
 //             <button onClick={() => onDelete(currentBook._id)}>Delete</button>
 //         </div>
@@ -61,7 +61,6 @@ export default function CurrentBookCard({ currentBook, onDelete, onFinished }) {
                 <>
                     <p>Title: {currentBook.title}</p>
                     <p>Author: {currentBook.author}</p>
-                    {/* You might want to have a different button or message here */}
                     <p>Book Finished</p>
                 </>
             )}

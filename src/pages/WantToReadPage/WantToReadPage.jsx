@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import WantBookCard from '../WantBookCard/WantBookCard';
+import WantBookCard from "../../components/WantBookCard/WantBookCard";
 import * as wantBookAPI from "../../utilities/want-book-api";
 
 export default function WantToReadPage({ user }) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CurrentBookCard from '../CurrentBookCard/CurrentBookCard';
+import CurrentBookCard from '../../components/CurrentBookCard/CurrentBookCard';
 import * as currentBookAPI from "../../utilities/current-book-api";
 // import { updateCurrentBookStatus } from "../../utilities/current-book-api";
 

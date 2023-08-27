@@ -3,7 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 
-const currentBooks = require('./routes/api/currentBooks');
+// const currentBooks = require('./routes/api/currentBooks');
 
 //always require and configure near the top
 require('dotenv').config();
@@ -27,9 +27,9 @@ app.use(require('./config/checkToken'));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
-// app.use('/api/current-book', currentBooks);
 app.use('/api/current-book', require('./routes/api/currentBooks'));
 app.use('/api/want-book', require('./routes/api/wantBooks'));
+app.use('/api/read-book', require('./routes/api/readBooks'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
