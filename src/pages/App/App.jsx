@@ -17,7 +17,7 @@ export default function App() {
 
         <>
           <NavBar user={user} setUser={setUser} />
-          <h1>Welcome, {user.name}!</h1>
+          
           <br />
           <Routes>
             <Route path="/books" element={< CurrentlyReadingPage user={user} />} />

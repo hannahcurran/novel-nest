@@ -4,7 +4,7 @@ import * as wantBookAPI from "../../utilities/want-book-api";
 
 export default function WantToReadPage({ user }) {
     const [wantBooks, setWantBooks] = useState([]);
-       const [newWantBook, setNewWantBook] = useState({
+    const [newWantBook, setNewWantBook] = useState({
         title: '',
         author: '',
         user: user
@@ -17,7 +17,7 @@ export default function WantToReadPage({ user }) {
     async function handleNewWant(evt) {
         evt.preventDefault();
         try {
-            const newBookData = { ...newWantBook, user: user._id };
+            const newBookData = { ...newWantBook, user: user._id, status: 'want to read' };
             const addedBook = await wantBookAPI.addWantBook(newBookData);
             setWantBooks([...wantBooks, addedBook]);
             setNewWantBook({ title: '', author: '' });
@@ -33,10 +33,10 @@ export default function WantToReadPage({ user }) {
 
     }
 
-    async function handleDeleteBook(bookId) {
+    async function handleDeleteBook(wantBookId) {
         try {
-            await wantBookAPI.deleteWantBook(bookId);
-            setWantBooks(wantBooks.filter(book => book._id !== bookId));
+            await wantBookAPI.deleteWantBook(wantBookId);
+            setWantBooks(wantBooks.filter(wantBook => wantBook._id !== wantBookId));
         } catch (error) {
             console.error('Error deleting book:', error);
         }
@@ -46,15 +46,16 @@ export default function WantToReadPage({ user }) {
         getWantBook()
     }, [])
 
+    const wantBooksToShow = wantBooks.filter(book => book.status === 'want to read');
+
     return (
         <>
-            <h1>Want To Read</h1> 
+            <h2>Want To Read</h2>
 
             <ul className="wantBooks-container">
-                {wantBooks.map((wantBook, idx) => (
-                    <WantBookCard key={wantBook._id} wantBook={wantBook} 
-                        onDelete={handleDeleteBook} />
-                        
+                {wantBooksToShow.map((wantBook, idx) => (
+                    <WantBookCard key={wantBook._id} wantBook={wantBook} onDelete={handleDeleteBook} />
+
                 ))}
             </ul>
             <form className="wantToReadForm">
@@ -82,9 +83,10 @@ export default function WantToReadPage({ user }) {
 
 
                 </div>
-            </form> 
+            </form>
 
         </>
 
     );
 }
+

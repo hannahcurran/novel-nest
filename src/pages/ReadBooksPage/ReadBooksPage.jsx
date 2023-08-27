@@ -29,7 +29,7 @@ export default function ReadBooksPage() {
 
         //         </div>
 
-        <div> <h1>Read Book Details</h1>
+        <div> <h2>Read Book Details</h2>
             <p>Title: </p>
             <p>Author: </p>
 

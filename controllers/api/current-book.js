@@ -3,7 +3,7 @@ const Book = require('../../models/book');
 
 async function addCurrentBook(req, res) {
     try {
-        const newCurrentBook = await Book.create(req.body);
+        const newCurrentBook = await Book.create({ ...req.body, status: 'currently reading' });
         res.json(newCurrentBook);
     } catch (error) {
         console.error(error);

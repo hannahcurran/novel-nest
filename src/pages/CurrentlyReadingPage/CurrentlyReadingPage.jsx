@@ -5,8 +5,8 @@ import * as currentBookAPI from "../../utilities/current-book-api";
 
 
 export default function CurrentlyReadingPage({ user }) {
-    const [currentBooks, setCurrentBooks] = useState([]);
-    const [finishedBooks, setFinishedBooks] = useState([]);
+    const [currentlyReadingBooks, setCurrentlyReadingBooks] = useState([]); 
+    // const [finishedBooks, setFinishedBooks] = useState([]);
     const [newCurrentBook, setNewCurrentBook] = useState({
         title: '',
         author: '',
@@ -22,7 +22,7 @@ export default function CurrentlyReadingPage({ user }) {
         try {
             const newBookData = { ...newCurrentBook, user: user._id };
             const addedBook = await currentBookAPI.addCurrentBook(newBookData);
-            setCurrentBooks([...currentBooks, addedBook]);
+            setCurrentlyReadingBooks([...currentlyReadingBooks, addedBook]);
             setNewCurrentBook({ title: '', author: '' });
         } catch (error) {
             console.error('Error adding current book:', error);
@@ -32,14 +32,14 @@ export default function CurrentlyReadingPage({ user }) {
 
     async function getCurrentBook() {
         const allCurrentBooks = await currentBookAPI.getCurrentBook();
-        setCurrentBooks(allCurrentBooks);
+        setCurrentlyReadingBooks(allCurrentBooks);
 
     }
 
-    async function handleDeleteBook(bookId) {
+    async function handleDeleteBook(currentBookId) {
         try {
-            await currentBookAPI.deleteCurrentBook(bookId);
-            setCurrentBooks(currentBooks.filter(book => book._id !== bookId));
+            await currentBookAPI.deleteCurrentBook(currentBookId);
+            setCurrentlyReadingBooks(currentlyReadingBooks.filter(book => book._id !== currentBookId));
         } catch (error) {
             console.error('Error deleting book:', error);
         }
@@ -62,12 +62,14 @@ export default function CurrentlyReadingPage({ user }) {
         getCurrentBook()
     }, [])
 
+     const currentlyReadingBooksToShow = currentlyReadingBooks.filter(book => book.status === 'currently reading');
     return (
         <>
-            <h1>Your Current Reading List</h1>
+        <h1>Hi there, {user.name}!</h1>
+            <h2>Your Current Reading List</h2>
 
             <ul className="currentBooks-container">
-                {currentBooks.map((currentBook, idx) => (
+                {currentlyReadingBooksToShow.map((currentBook, idx) => (
                     <CurrentBookCard key={currentBook._id} currentBook={currentBook} 
                         onDelete={handleDeleteBook} />
                         //add onFinished={handleFinished} 

@@ -3,7 +3,7 @@ const Book = require('../../models/book');
 
 async function addWantBook(req, res) {
     try {
-        const newWantBook = await Book.create(req.body);
+        const newWantBook = await Book.create({ ...req.body, status: 'want to read' });
         res.json(newWantBook);
     } catch (error) {
         console.error(error);
