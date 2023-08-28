@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ReadBookCard from "../../components/ReadBookCard/ReadBookCard";
 import * as readBookAPI from "../../utilities/read-book-api";
 
+
 export default function ReadBooksPage({ user }) {
     // const location = useLocation();
     // const queryParams = new URLSearchParams(location.search);
@@ -12,7 +13,8 @@ export default function ReadBooksPage({ user }) {
     const [newReadBook, setNewReadBook] = useState({
         title: '',
         author: '',
-        user: user
+        user: user,
+        isFavorite: false
     });
     const [editingReview, setEditingReview] = useState(null);
 
@@ -38,9 +40,12 @@ export default function ReadBooksPage({ user }) {
     }
 
     async function getReadBook() {
-        const allReadBooks = await readBookAPI.getReadBook();
-        setReadBooks(allReadBooks);
-
+        try {
+            const allReadBooks = await readBookAPI.getReadBookWithFavoriteStatus(user._id);
+            setReadBooks(allReadBooks);
+        } catch (error) {
+            console.error('Error fetching books:', error);
+        }
     }
 
     async function handleDeleteBook(readBookId) {
@@ -58,7 +63,6 @@ export default function ReadBooksPage({ user }) {
 
     async function handleSaveEdit(reviewId, newReviewContent) {
         try {
-            // Update the review content in API
             await readBookAPI.updateReview(reviewId, newReviewContent);
 
             // Update the local state with the new review content
@@ -77,6 +81,16 @@ export default function ReadBooksPage({ user }) {
         }
     }
 
+    async function handleToggleFavorite(bookId) {
+        try {
+            const updatedBook = await readBookAPI.toggleFavoriteStatus(bookId); // Update favorite status in backend
+            setReadBooks(prevReadBooks =>
+                prevReadBooks.map(book => (book._id === bookId ? updatedBook : book))
+            );
+        } catch (error) {
+            console.error('Error toggling favorite status:', error);
+        }
+    }
 
     useEffect(() => {
         getReadBook()
@@ -86,12 +100,18 @@ export default function ReadBooksPage({ user }) {
 
     return (
 
+    
+
         <>
             <h2>Read Books & Reviews</h2>
 
             <ul className="readBooks-container">
                 {readBooksToShow.map((readBook, idx) => (
-                    <ReadBookCard key={readBook._id} readBook={readBook} onDelete={handleDeleteBook} onEdit={handleEdit} />
+                    <ReadBookCard key={readBook._id}
+                        readBook={readBook}
+                        onDelete={handleDeleteBook}
+                        onEdit={handleEdit}
+                        onToggleFavorite={() => handleToggleFavorite(readBook._id)} />
 
                 ))}
             </ul>
@@ -131,17 +151,16 @@ export default function ReadBooksPage({ user }) {
                                 onChange={e => setEditingReview({ ...editingReview, review: e.target.value })}
                             />
                             <button onClick={() => handleSaveEdit(editingReview._id, editingReview.review)}>
-                                Save Edit
+                                Save
                             </button>
                             <button onClick={() => setEditingReview(null)}>Cancel</button>
                         </div>
                     )}
 
-
-
                 </div>
             </form>
 
         </>
+    
     );
 }

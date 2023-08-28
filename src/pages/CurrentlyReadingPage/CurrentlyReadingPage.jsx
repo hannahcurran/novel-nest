@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import CurrentBookCard from '../../components/CurrentBookCard/CurrentBookCard';
 import * as currentBookAPI from "../../utilities/current-book-api";
+// import './CurrentlyReadingPage.css';
 // import { updateCurrentBookStatus } from "../../utilities/current-book-api";
 
 
 export default function CurrentlyReadingPage({ user }) {
-    const [currentlyReadingBooks, setCurrentlyReadingBooks] = useState([]); 
+    const [currentlyReadingBooks, setCurrentlyReadingBooks] = useState([]);
     // const [finishedBooks, setFinishedBooks] = useState([]);
     const [newCurrentBook, setNewCurrentBook] = useState({
         title: '',
@@ -55,24 +56,25 @@ export default function CurrentlyReadingPage({ user }) {
     //         console.error('Error marking book as finished:', error);
     //     }
     // }
-    
+
 
 
     useEffect(() => {
         getCurrentBook()
     }, [])
 
-     const currentlyReadingBooksToShow = currentlyReadingBooks.filter(book => book.status === 'currently reading');
+    const currentlyReadingBooksToShow = currentlyReadingBooks.filter(book => book.status === 'currently reading');
     return (
+
         <>
-        <h1>Hi there, {user.name}!</h1>
+            <h1>Hi there, {user.name}!</h1>
             <h2>Your Current Reading List</h2>
 
             <ul className="currentBooks-container">
                 {currentlyReadingBooksToShow.map((currentBook, idx) => (
-                    <CurrentBookCard key={currentBook._id} currentBook={currentBook} 
+                    <CurrentBookCard key={currentBook._id} currentBook={currentBook}
                         onDelete={handleDeleteBook} />
-                        //add onFinished={handleFinished} 
+                    //add onFinished={handleFinished} 
                 ))}
             </ul>
             <form className="currentlyReadingForm">
@@ -95,14 +97,9 @@ export default function CurrentlyReadingPage({ user }) {
                     <div className='submit-btn'>
                         <button type="submit" onClick={handleNewCurrent}>Add To List</button>
                     </div>
-
-
-
-
                 </div>
             </form>
 
         </>
-
     );
 }

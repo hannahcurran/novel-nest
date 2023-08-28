@@ -1,6 +1,5 @@
-
-
 import React from 'react';
+import '../../pages/CurrentlyReadingPage/CurrentlyReadingPage.css';
 
 // export default function CurrentBookCard({ currentBook, handleDeleteBook }) {
 //     return (
