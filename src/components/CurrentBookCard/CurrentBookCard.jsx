@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../pages/CurrentlyReadingPage/CurrentlyReadingPage.css';
+import { Box, Stack, VStack} from '@chakra-ui/react';
 
 // export default function CurrentBookCard({ currentBook, handleDeleteBook }) {
 //     return (
@@ -51,10 +52,12 @@ export default function CurrentBookCard({ currentBook, onDelete, onFinished }) {
         <div className="current-book-card">
             {currentBook.status !== 'finished' ? (
                 <>
-                    <p>Title: {currentBook.title}</p>
+                 <Box bg='#d4dff9'>  
+                  <p>Title: {currentBook.title}</p>
                     <p>Author: {currentBook.author}</p>
                     <button onClick={() => onFinished(currentBook._id)}>Finished</button>
                     <button onClick={() => onDelete(currentBook._id)}>Delete</button>
+                    </Box>
                 </>
             ) : (
                 <>

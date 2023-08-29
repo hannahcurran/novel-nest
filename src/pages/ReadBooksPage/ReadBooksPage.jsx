@@ -3,6 +3,13 @@ import React, { useState, useEffect } from 'react';
 import ReadBookCard from "../../components/ReadBookCard/ReadBookCard";
 import * as readBookAPI from "../../utilities/read-book-api";
 
+// import {
+//     Editable,
+//     EditableInput,
+//     EditableTextarea,
+//     EditablePreview,
+// } from '@chakra-ui/react'
+
 
 export default function ReadBooksPage({ user }) {
     // const location = useLocation();
@@ -100,21 +107,9 @@ export default function ReadBooksPage({ user }) {
 
     return (
 
-    
-
         <>
             <h2>Read Books & Reviews</h2>
 
-            <ul className="readBooks-container">
-                {readBooksToShow.map((readBook, idx) => (
-                    <ReadBookCard key={readBook._id}
-                        readBook={readBook}
-                        onDelete={handleDeleteBook}
-                        onEdit={handleEdit}
-                        onToggleFavorite={() => handleToggleFavorite(readBook._id)} />
-
-                ))}
-            </ul>
             <form className="readBookForm">
 
                 <div className="input-container">
@@ -135,7 +130,7 @@ export default function ReadBooksPage({ user }) {
 
                     <input
                         type="text"
-                        placeholder="Review"
+                        placeholder="Write a Review..."
                         name="review"
                         value={newReadBook.review}
                         onChange={handleReviewChange}
@@ -148,19 +143,34 @@ export default function ReadBooksPage({ user }) {
                             <input
                                 type="text"
                                 value={editingReview.review}
-                                onChange={e => setEditingReview({ ...editingReview, review: e.target.value })}
+                                onChange={evt => setEditingReview({ ...editingReview, review: evt.target.value })}
                             />
+                                                    
                             <button onClick={() => handleSaveEdit(editingReview._id, editingReview.review)}>
                                 Save
                             </button>
                             <button onClick={() => setEditingReview(null)}>Cancel</button>
+
+
                         </div>
                     )}
 
                 </div>
             </form>
 
+            <ul className="readBooks-container">
+                {readBooksToShow.map((readBook, idx) => (
+                    <ReadBookCard key={readBook._id}
+                        readBook={readBook}
+                        onDelete={handleDeleteBook}
+                        onEdit={handleEdit}
+                        onToggleFavorite={() => handleToggleFavorite(readBook._id)} />
+
+                ))}
+            </ul>
+
+
         </>
-    
+
     );
 }

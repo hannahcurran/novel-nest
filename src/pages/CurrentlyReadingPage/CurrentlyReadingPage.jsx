@@ -68,6 +68,8 @@ export default function CurrentlyReadingPage({ user }) {
 
         <>
             <h1>Hi there, {user.name}!</h1>
+
+            
             <h2>Your Current Reading List</h2>
 
             <ul className="currentBooks-container">
