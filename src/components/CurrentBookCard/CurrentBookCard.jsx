@@ -49,14 +49,14 @@ import { Box, Stack, VStack} from '@chakra-ui/react';
 
 export default function CurrentBookCard({ currentBook, onDelete, onFinished }) {
     return (
-        <div className="current-book-card">
+        <div >
             {currentBook.status !== 'finished' ? (
                 <>
-                 <Box bg='#d4dff9'>  
+                 <Box className='currently-reading-display-card'>  
                   <p>Title: {currentBook.title}</p>
                     <p>Author: {currentBook.author}</p>
-                    <button onClick={() => onFinished(currentBook._id)}>Finished</button>
-                    <button onClick={() => onDelete(currentBook._id)}>Delete</button>
+                    <button onClick={() => onFinished(currentBook._id)} className='submit-btn'>Finished</button>
+                    <button onClick={() => onDelete(currentBook._id)} className='submit-btn'>Delete</button>
                     </Box>
                 </>
             ) : (

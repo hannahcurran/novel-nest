@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import * as userService from '../../utilities/users-service';
+import NNlogo from '../../Images/NNlogo.png';
+import './NavBar.css';
+// import '../../pages/App/App.css';
+import { Flex, Spacer, HStack } from '@chakra-ui/react';
 
 export default function NavBar({ user, setUser }) {
     function handleLogOut() {
@@ -8,21 +12,22 @@ export default function NavBar({ user, setUser }) {
     }
 
     return (
-<>
-        <nav >
-            <span>LOGO HERE</span>
-            &nbsp; | &nbsp;
-            <Link to="/books">Currently Reading </Link>
-            &nbsp; | &nbsp;
-           <Link to="/books/read">Read </Link>
-            &nbsp; | &nbsp;
-            <Link to="/books/wanttoread">Want To Read </Link>
-            &nbsp; | &nbsp;
-
-            <Link to="" onClick={handleLogOut}>Log Out</Link>
+        <>
+            <nav >
+                <box>
+                    <HStack spacing='20px'>
+                        <img src={NNlogo} alt="Logo" className="logo-img" />
+                        {/* <Link to="/"><img src={NNlogo} alt="Logo" /></Link> */}
+                        <Link to="/books" className="nav-link">Current Reads  |</Link>
+                        <Link to="/books/read" className="nav-link">Read  |</Link>
+                        <Link to="/books/wanttoread" className="nav-link">Want To Read  |</Link>
+                        <Link to="" onClick={handleLogOut} className="nav-link">Log Out  </Link>
+                    </HStack>
+                </box>
             </nav>
 
-      
+
+
 
             {/* <nav class="navbar bg-light">
                 <div class="container-fluid">
@@ -44,8 +49,8 @@ export default function NavBar({ user, setUser }) {
             <div class="container-fluid mt-3"></div> */}
 
 
-      
+
 
         </>
-                );
+    );
 }

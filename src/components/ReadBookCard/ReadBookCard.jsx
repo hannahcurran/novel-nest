@@ -27,10 +27,8 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
                             <EditablePreview />
                             <EditableTextarea />
                         </Editable>
-                        <button onClick={() => onEdit(readBook)}>Edit Review</button>
-                        {/* <button onClick={() => handleSaveEdit(editingReview._id, editingReview.review)}>
-                                Save
-                            </button> */}
+                        
+                       
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
@@ -46,13 +44,5 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
         </div>
     )
 }
-
-
-
-
-
-
-
-
 
 

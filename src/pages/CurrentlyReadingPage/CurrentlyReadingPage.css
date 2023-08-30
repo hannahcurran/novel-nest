@@ -1,37 +1,87 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #F5F5F5;
+}
 
+h1 {
+    color: #430dd5;
+    font-family: 'Quicksand', sans-serif;
+}
 
+h2,
+h3 {
+    color: #5b23f2;
+    font-family: 'Quicksand', sans-serif;
 
-/* .current-book-card {
-    background-color: #d4dff9;
-    border-radius: 20px;
+}
+
+/* 
+.currentBooks-container {
+    background-color: red;
+    border-radius: 15px;
     text-align: center;
     padding: 10px;
+    margin: 15px;
+    color:#5b23f2;
+    border:20px;
+    font-family: 'Quicksand', sans-serif;;
    
 } */
 
-button{
-    color: black;
-    /* background: #5E5DF0;
+.input-container {
+    background-color: #CDD9F8;
+    padding: 10px;
+    margin: 5px;
     border-radius: 15px;
-    box-shadow: #5E5DF0 0 10px 20px -10px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer; */
-     /* font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif; */ 
-    /* font-size: 16px; */
-    /* font-weight: 700;
-    line-height: 24px;
-    opacity: 1;
-    outline: 0 solid transparent;
-    padding: 8px 18px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: fit-content;
-    word-break: break-word;   */
-} 
+    font-family: 'Quicksand', sans-serif;
+    border-color: #5b23f2;
+    border-style: solid;
+    border-width: 3px;
 
 
-.currentlyReadingForm{
+}
 
+.currently-reading-display-card {
+    text-align: center;
+    background-color: #CDD9F8;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px;
+    width: auto;
+    max-width: 100%;
+    color: #430dd5;
+    border-color: #5b23f2;
+    border-style: solid;
+    border-width: 3px;
+
+
+
+    /* max-width:100px; */
+}
+
+.submit-btn {
+    color: white;
+    background-color: #a7bef3;
+    font-size: 18px;
+    border-color: white;
+    padding: 4px;
+    font-family: 'Quicksand', sans-serif;
+    border-color: #5b23f2;
+    border-style: solid;
+    border-width: 1px;
+
+
+
+}
+
+.add-to-list-btn {
+    background-color: #a7bef3;
+    /* border-color: #5b23f2; */
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    font-family: 'Quicksand', sans-serif;
+    border-color: #5b23f2;
+    border-style: solid;
+    border-width: 1px;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WantBookCard from "../../components/WantBookCard/WantBookCard";
 import * as wantBookAPI from "../../utilities/want-book-api";
+import './WantToReadPage.css';
 
 export default function WantToReadPage({ user }) {
     const [wantBooks, setWantBooks] = useState([]);
@@ -55,8 +56,10 @@ export default function WantToReadPage({ user }) {
             <ul className="wantBooks-container">
                 {wantBooksToShow.map((wantBook, idx) => (
                     <WantBookCard key={wantBook._id} wantBook={wantBook} onDelete={handleDeleteBook} />
+                    
 
                 ))}
+             
             </ul>
             <form className="wantToReadForm">
 

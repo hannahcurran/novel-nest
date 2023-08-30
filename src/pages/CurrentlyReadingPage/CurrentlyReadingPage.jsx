@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CurrentBookCard from '../../components/CurrentBookCard/CurrentBookCard';
 import * as currentBookAPI from "../../utilities/current-book-api";
-// import './CurrentlyReadingPage.css';
+import './CurrentlyReadingPage.css';
 // import { updateCurrentBookStatus } from "../../utilities/current-book-api";
 
 
@@ -65,12 +65,17 @@ export default function CurrentlyReadingPage({ user }) {
 
     const currentlyReadingBooksToShow = currentlyReadingBooks.filter(book => book.status === 'currently reading');
     return (
-
+        <body>
         <>
-            <h1>Hi there, {user.name}!</h1>
-
+    
             
-            <h2>Your Current Reading List</h2>
+        
+            <h1>Hi there, {user.name}!</h1>
+<br />
+<br />  
+            
+            <h2>Your Current Books:</h2>
+            <br />
 
             <ul className="currentBooks-container">
                 {currentlyReadingBooksToShow.map((currentBook, idx) => (
@@ -79,6 +84,8 @@ export default function CurrentlyReadingPage({ user }) {
                     //add onFinished={handleFinished} 
                 ))}
             </ul>
+
+            <h3>Any others?</h3>
             <form className="currentlyReadingForm">
 
                 <div className="input-container">
@@ -96,12 +103,13 @@ export default function CurrentlyReadingPage({ user }) {
                         value={newCurrentBook.author}
                         onChange={handleChange}
                     />
-                    <div className='submit-btn'>
-                        <button type="submit" onClick={handleNewCurrent}>Add To List</button>
+                    <div>
+                        <button type="submit" onClick={handleNewCurrent} className='add-to-list-btn'>Add To List</button>
                     </div>
                 </div>
             </form>
-
+           
         </>
+        </body>
     );
 }
