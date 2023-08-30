@@ -30,8 +30,13 @@ export default function App() {
         </>
       ) : (
         <AuthPage setUser={setUser} />
+
+        
       )}
+      <footer>Questions about books or need some reading recommendations? Send us a message at: hello@novelnestreads.co.uk</footer>
+      
     </main>
+
 
   );
 

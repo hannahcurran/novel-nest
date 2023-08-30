@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../pages/CurrentlyReadingPage/CurrentlyReadingPage.css';
-import { Box, Stack, VStack} from '@chakra-ui/react';
+import { Box, Stack, VStack, Container} from '@chakra-ui/react';
 
 // export default function CurrentBookCard({ currentBook, handleDeleteBook }) {
 //     return (
@@ -50,13 +50,14 @@ import { Box, Stack, VStack} from '@chakra-ui/react';
 export default function CurrentBookCard({ currentBook, onDelete, onFinished }) {
     return (
         <div >
+            <Container>
             {currentBook.status !== 'finished' ? (
                 <>
-                 <Box className='currently-reading-display-card'>  
-                  <p>Title: {currentBook.title}</p>
-                    <p>Author: {currentBook.author}</p>
-                    <button onClick={() => onFinished(currentBook._id)} className='submit-btn'>Finished</button>
-                    <button onClick={() => onDelete(currentBook._id)} className='submit-btn'>Delete</button>
+                    <Box className='currently-reading-display-card'>
+                        <p>Title: {currentBook.title}</p>
+                        <p>Author: {currentBook.author}</p>
+                        <button onClick={() => onFinished(currentBook._id)} className='submit-btn'>Finished</button>
+                        <button onClick={() => onDelete(currentBook._id)} className='submit-btn'>Delete</button>
                     </Box>
                 </>
             ) : (
@@ -66,6 +67,8 @@ export default function CurrentBookCard({ currentBook, onDelete, onFinished }) {
                     <p>Book Finished</p>
                 </>
             )}
+            </Container>
         </div>
+
     );
 }

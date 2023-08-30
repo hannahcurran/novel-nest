@@ -3,6 +3,10 @@ import CurrentBookCard from '../../components/CurrentBookCard/CurrentBookCard';
 import * as currentBookAPI from "../../utilities/current-book-api";
 import './CurrentlyReadingPage.css';
 // import { updateCurrentBookStatus } from "../../utilities/current-book-api";
+import { Grid, GridItem, Container } from '@chakra-ui/react';
+import NavBar from '../../components/NavBar/NavBar';
+// import '../App/App.css';
+
 
 
 export default function CurrentlyReadingPage({ user }) {
@@ -65,28 +69,22 @@ export default function CurrentlyReadingPage({ user }) {
 
     const currentlyReadingBooksToShow = currentlyReadingBooks.filter(book => book.status === 'currently reading');
     return (
-        <body>
+        <body className="body">
+            
+   
         <>
-    
-            
-        
             <h1>Hi there, {user.name}!</h1>
-<br />
-<br />  
-            
+         <br />
             <h2>Your Current Books:</h2>
-            <br />
-
-            <ul className="currentBooks-container">
+                     <ul className="currentBooks-container">
                 {currentlyReadingBooksToShow.map((currentBook, idx) => (
                     <CurrentBookCard key={currentBook._id} currentBook={currentBook}
                         onDelete={handleDeleteBook} />
                     //add onFinished={handleFinished} 
                 ))}
-            </ul>
-
-            <h3>Any others?</h3>
+            
             <form className="currentlyReadingForm">
+                <h3>Any others?</h3>
 
                 <div className="input-container">
                     <input
@@ -108,8 +106,13 @@ export default function CurrentlyReadingPage({ user }) {
                     </div>
                 </div>
             </form>
-           
+            </ul>
+            
         </>
         </body>
     );
+
 }
+
+
+

@@ -1,34 +1,46 @@
-body {
+.body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #F5F5F5;
+    padding: 50px;
+    min-height: 100vh;
+ 
+ 
 }
 
 h1 {
     color: #430dd5;
     font-family: 'Quicksand', sans-serif;
+    /* display: flex; */
+    justify-content: center; /* Center horizontally */
+ 
 }
 
 h2,
 h3 {
     color: #5b23f2;
     font-family: 'Quicksand', sans-serif;
+    /* display: flex; */
+    justify-content: center; /* Center horizontally */
 
 }
 
-/* 
+
 .currentBooks-container {
-    background-color: red;
-    border-radius: 15px;
     text-align: center;
     padding: 10px;
     margin: 15px;
     color:#5b23f2;
     border:20px;
-    font-family: 'Quicksand', sans-serif;;
+    font-family: 'Quicksand', sans-serif;
+    /* display: flex; */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Use the full viewport height */
+    flex-direction: column; /* Stack items vertically */
    
-} */
+}
 
 .input-container {
+    flex-direction: center;;
     background-color: #CDD9F8;
     padding: 10px;
     margin: 5px;
@@ -37,26 +49,33 @@ h3 {
     border-color: #5b23f2;
     border-style: solid;
     border-width: 3px;
+  
+   
 
 
 }
 
+.currentlyReadingForm{
+    /* display: flex; */
+ 
+    align-items: center; /* Center vertically */   
+    
+    
+}
+
 .currently-reading-display-card {
     text-align: center;
-    background-color: #CDD9F8;
+    /* background-color: #CDD9F8; */
     border-radius: 15px;
     padding: 15px;
     margin: 20px;
     width: auto;
     max-width: 100%;
     color: #430dd5;
-    border-color: #5b23f2;
+    border-color: grey;
     border-style: solid;
-    border-width: 3px;
+    border-width: 1px;
 
-
-
-    /* max-width:100px; */
 }
 
 .submit-btn {
@@ -65,10 +84,12 @@ h3 {
     font-size: 18px;
     border-color: white;
     padding: 4px;
+    margin: 5px;
     font-family: 'Quicksand', sans-serif;
     border-color: #5b23f2;
     border-style: solid;
     border-width: 1px;
+    border-radius: 10px;
 
 
 
@@ -80,8 +101,10 @@ h3 {
     color: white;
     font-size: 18px;
     padding: 5px;
+    margin: 5px;
     font-family: 'Quicksand', sans-serif;
     border-color: #5b23f2;
     border-style: solid;
     border-width: 1px;
+     border-radius: 10px;
 }

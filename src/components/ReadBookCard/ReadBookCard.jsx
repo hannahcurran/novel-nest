@@ -21,14 +21,14 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
                     </h2>
                     <AccordionPanel pb={4}>
                         <Editable defaultValue={readBook.review}>
-                        <button onClick={() => handleSaveEdit(readBook.review)}>
-                                Save
-                            </button>
+                        
                             <EditablePreview />
                             <EditableTextarea />
                         </Editable>
-                        
-                       
+                        <button onClick={() => onEdit(readBook)}>Edit</button>
+                        <button onClick={() => handleSaveEdit(readBook.review)}>
+                                Save
+                            </button>
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>

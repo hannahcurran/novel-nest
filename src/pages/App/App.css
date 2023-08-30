@@ -1,7 +1,43 @@
 .App {
   text-align: center;
- 
+  
 }
+
+.body{
+  /* background-color: #F5F5F5; */
+  /* background-color: #CCCC66; */
+  /* background-color: #e0e0eb; */
+  border-radius: 15px;
+}
+
+
+h1 {
+  color: #430dd5;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+
+}
+
+h2,
+h3 {
+  color: #5b23f2;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+
+}
+
+footer{
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: 'Quicksand', sans-serif;
+  bottom: 0;
+  color: #5b23f2;
+
+}
+
 
 /* .App-logo {
   height: 40vmin;

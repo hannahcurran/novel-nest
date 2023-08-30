@@ -118,11 +118,11 @@ input {
   outline: none;
 }
 
-input:focus {
+/* input:focus {
   border-color: var(--orange);
-}
+} */
 
-button, a.button {
+/* button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
@@ -135,9 +135,9 @@ button, a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
-}
+} */
 
-button.btn-sm {
+/* button.btn-sm {
   font-size: 1.5vmin;
   padding: .6vmin .8vmin;
 }
@@ -155,4 +155,4 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
+} */

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import WantBookCard from "../../components/WantBookCard/WantBookCard";
 import * as wantBookAPI from "../../utilities/want-book-api";
 import './WantToReadPage.css';
+import '../App/App.css';
 
 export default function WantToReadPage({ user }) {
     const [wantBooks, setWantBooks] = useState([]);
@@ -50,6 +51,7 @@ export default function WantToReadPage({ user }) {
     const wantBooksToShow = wantBooks.filter(book => book.status === 'want to read');
 
     return (
+        <body className="body">
         <>
             <h2>Want To Read</h2>
 
@@ -78,8 +80,8 @@ export default function WantToReadPage({ user }) {
                         value={newWantBook.author}
                         onChange={handleChange}
                     />
-                    <div className='submit-btn'>
-                        <button type="submit" onClick={handleNewWant}>Add To List</button>
+                    <div >
+                        <button type="submit" onClick={handleNewWant} className='add-to-list-btn'>Add To List</button>
                     </div>
 
 
@@ -89,7 +91,7 @@ export default function WantToReadPage({ user }) {
             </form>
 
         </>
-
+</body>
     );
 }
 
