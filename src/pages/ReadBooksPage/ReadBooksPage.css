@@ -1,3 +1,8 @@
+.read-reviews-header{
+   width:50%;
+
+}
+
 .read-book-card {
    background-color: #F5F5F5;
    border-radius: 15px;
@@ -13,6 +18,10 @@
    border-style: solid;
    border-width: 2px;
    font-family: 'Quicksand', sans-serif;
+}
+
+.favorite-text{
+   color:#f70776;
 }
 
 .book-title, .book-author, .review-title{

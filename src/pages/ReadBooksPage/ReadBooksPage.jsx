@@ -196,6 +196,7 @@ import * as readBookAPI from "../../utilities/read-book-api";
 import "./ReadBooksPage.css";
 import '../App/App.css';
 // import {Box} from '@chakra-ui/react';
+import NNreadandreviews from '../../Images/NNreadandreviews.png';
 
 import {
     Editable,
@@ -300,7 +301,7 @@ export default function ReadBooksPage({ user }) {
     return (
 
         <>
-            <h2>Read Books & Reviews</h2>
+          <header className='read-reviews-header'><img src={NNreadandreviews} /></header>
 
             <form className="readBookForm">
                 <div className="readbooks-input-container">

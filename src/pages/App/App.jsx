@@ -17,24 +17,24 @@ export default function App() {
 
         <>
           <NavBar user={user} setUser={setUser} />
-          
+
           <br />
           <Routes>
             <Route path="/books" element={< CurrentlyReadingPage user={user} />} />
             <Route path="/books/wanttoread" element={<WantToReadPage user={user} />} />
             <Route path="/books/read" element={<ReadBooksPage user={user} />} />
           </Routes>
-
-
-
+          
+         
         </>
+
       ) : (
         <AuthPage setUser={setUser} />
 
-        
       )}
       <footer>Questions about Novel Nest or need some reading recommendations? Send us a message at: hello@novelnestreads.co.uk</footer>
-      
+
+
     </main>
 
 

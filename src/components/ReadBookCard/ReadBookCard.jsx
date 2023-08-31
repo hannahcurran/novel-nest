@@ -91,7 +91,7 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
 
             <div className="favorite-icon" onClick={onToggleFavorite}>
                 <button onClick={onToggleFavorite}>
-                    {readBook.isFavorite ? <span >🩷 &nbsp;   it's a favourite!  </span> : <span>♡ favourite?</span>}
+                    {readBook.isFavorite ? <span className="favorite-text" >🖤 &nbsp;   it's a favourite!  </span> : <span>♡ favourite?</span>}
                 </button>
             </div>
             <div>

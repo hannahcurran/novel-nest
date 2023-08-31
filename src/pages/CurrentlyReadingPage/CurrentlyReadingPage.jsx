@@ -7,12 +7,13 @@ import { Grid, GridItem, Container } from '@chakra-ui/react';
 import NavBar from '../../components/NavBar/NavBar';
 // import '../App/App.css';
 import { dailyStreak } from '../../components/LoginForm/LoginForm';
+import NNcurrentlyreading from '../../Images/NNcurrentlyreading.png';
 
 
 
 export default function CurrentlyReadingPage({ user }) {
     const [currentlyReadingBooks, setCurrentlyReadingBooks] = useState([]);
-    const [dailyStreak, setDailyStreak] = useState(user.streak || '1 day! ')
+    // const [dailyStreak, setDailyStreak] = useState(user.streak || '1 day! ')
     // const [finishedBooks, setFinishedBooks] = useState([]);
     const [newCurrentBook, setNewCurrentBook] = useState({
         title: '',
@@ -75,11 +76,12 @@ export default function CurrentlyReadingPage({ user }) {
             
    
         <>
-            <h1>Hi there, {user.name}</h1>
+        <header className='currently-reading-header'><img src={NNcurrentlyreading} /></header>
+            {/* <h1>Hi there, {user.name}</h1> */}
          <br />
-         <h2>Your Daily Streak: {dailyStreak}</h2>
+         <h2>Your Daily Streak: {user.dailyStreak}</h2>
          <br />
-            <h2>Your Current Books:</h2>
+            {/* <h2>Your Current Books:</h2> */}
          
                      <ul className="currentBooks-container">
                 {currentlyReadingBooksToShow.map((currentBook, idx) => (

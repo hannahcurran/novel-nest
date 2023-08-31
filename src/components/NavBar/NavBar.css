@@ -14,4 +14,13 @@
 
 .nav-link:hover{
     color: #c5065e;
+    text-decoration: underline;
+   
+          }
+
+
+h4{
+    font-family: 'Quicksand', sans-serif;
+    color: #f70776;
+  
 }

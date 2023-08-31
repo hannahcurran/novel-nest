@@ -3,6 +3,7 @@ import WantBookCard from "../../components/WantBookCard/WantBookCard";
 import * as wantBookAPI from "../../utilities/want-book-api";
 import './WantToReadPage.css';
 import '../App/App.css';
+import NNwanttoread from '../../Images/NNwanttoread.png';
 
 export default function WantToReadPage({ user }) {
     const [wantBooks, setWantBooks] = useState([]);
@@ -53,7 +54,7 @@ export default function WantToReadPage({ user }) {
     return (
         <body className="body">
             <>
-                <h2>Want To Read</h2>
+            <header className='want-to-read-header'><img src={NNwanttoread} /></header>
 
 
                 <form className="wantToReadForm">

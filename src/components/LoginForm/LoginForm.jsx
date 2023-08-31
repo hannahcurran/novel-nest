@@ -12,7 +12,7 @@ export default function LoginForm({ setUser }) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
     setError('');
   }
-  // const [dailyStreak, setDailyStreak] = useState(user.dailyStreak || '1 day! ')
+  const [dailyStreak, setDailyStreak] = useState(dailyStreak || '1 day! ')
 
   // async function handleSubmit(evt) {
   //   // Prevent form from being submitted to the server
@@ -43,18 +43,18 @@ export default function LoginForm({ setUser }) {
       const lastLoginDate = user.lastLogin ? user.lastLogin.slice(0, 10) : null;
       if (lastLoginDate !== today) {
         // Update the user's streak if it's a new day
-        const streakResponse = await fetch(`/api/user/${user._id}/login`, {
+        const dailyStreak = await fetch(`/${user._id}/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
         });
 
-        if (streakResponse.ok) {
-          const updatedUser = await streakResponse.json();
+        if (dailyStreak.ok) {
+          const updatedUser = await dailyStreak.json();
           setUser(updatedUser);
         } else {
-          console.error('Error updating streak:', streakResponse.status);
+          console.error('Error updating streak:', dailyStreak.status);
         }
       }
       
