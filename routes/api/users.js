@@ -9,6 +9,7 @@ router.post('/', usersCtrl.create);
 
 router.post('/login', usersCtrl.login);
 
-
+//to track users login for streak
+router.post('/:userId/login');
 
 module.exports = router;

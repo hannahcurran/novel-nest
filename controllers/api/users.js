@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
     create,
     login,
+    dailyStreak
    };
 
 
@@ -34,6 +35,33 @@ async function login(req, res) {
     }
 
 }
+
+async function dailyStreak(req, res){
+
+    const userId = req.params.userId;
+    try {
+        const user = await User.findById(userId);
+        if (user) {
+            const today = new Date().toISOString().slice(0, 10); 
+            const lastLoginDate = user.lastLogin ? user.lastLogin.toISOString().slice(0, 10) : null;
+
+            if (lastLoginDate !== today) {
+                user.streak += 1;
+            }
+
+            user.lastLogin = new Date();
+            await user.save();
+
+            return res.json(user);
+        } else {
+            return res.status(404).json({ message: 'User not found' });
+        }
+    } catch (error) {
+        console.error('Error updating login:', error);
+        return res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
 
 /*-- Helper Functions --*/
 

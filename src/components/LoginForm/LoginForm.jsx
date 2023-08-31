@@ -12,16 +12,53 @@ export default function LoginForm({ setUser }) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
     setError('');
   }
+  // const [dailyStreak, setDailyStreak] = useState(user.dailyStreak || '1 day! ')
+
+  // async function handleSubmit(evt) {
+  //   // Prevent form from being submitted to the server
+  //   evt.preventDefault();
+  //   try {
+  //     // The promise returned by the signUp service method 
+  //     // will resolve to the user object included in the
+  //     // payload of the JSON Web Token (JWT)
+  //     const user = await usersService.login(credentials);
+  //     setUser(user);
+  //   } catch {
+  //     setError('Log In Failed - Try Again');
+  //   }
+  // }
+
+
 
   async function handleSubmit(evt) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
+    
     try {
-      // The promise returned by the signUp service method 
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
+      // Log the user in and get the updated user data
       const user = await usersService.login(credentials);
-      setUser(user);
+      
+      // Check if the last login was on the same day
+      const today = new Date().toISOString().slice(0, 10);
+      const lastLoginDate = user.lastLogin ? user.lastLogin.slice(0, 10) : null;
+      if (lastLoginDate !== today) {
+        // Update the user's streak if it's a new day
+        const streakResponse = await fetch(`/api/user/${user._id}/login`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (streakResponse.ok) {
+          const updatedUser = await streakResponse.json();
+          setUser(updatedUser);
+        } else {
+          console.error('Error updating streak:', streakResponse.status);
+        }
+      }
+      
+           setUser(user);
     } catch {
       setError('Log In Failed - Try Again');
     }
