@@ -1,5 +1,57 @@
-import 
+.read-book-card {
+   background-color: #F5F5F5;
+   border-radius: 15px;
+   padding:20px;
+   border-color: #e6e6e6;
+   border-radius: 15px;
+   padding: 20px;;
+   margin: 20px;
+   width: 30%;
+   max-width: 100%;
+   /* color: #430dd5; */
+   /* border-color: #e6e6e6; */
+   border-style: solid;
+   border-width: 2px;
+   font-family: 'Quicksand', sans-serif;
+}
 
-h2 {
-   color: #5b23f2;
+.book-title, .book-author, .review-title{
+   color: slategray;
+}
+
+.readbooks-input-container {
+   flex-direction: center;
+   padding: 20px;
+   margin: 5px;
+   border-radius: 15px;
+   font-family: 'Quicksand', sans-serif;
+   border-color: #f70776;
+   border-style: solid;
+   border-width: 3px;
+   justify-content: center;
+   background-color: #e6e6e6;
+
+}
+
+.readbook-submit-btn, .read-review-add-btn {
+   font-size: 15px;
+   padding: 5px;
+   margin: 5px;
+   font-family: 'Quicksand', sans-serif;
+   border-color: darkgray;
+   border-style: solid;
+   border-width: 2px;
+   border-radius: 10px;
+
+}
+
+.readbook-submit-btn:hover, .read-review-add-btn:hover {
+   background-color: #c5065e;
+   border-color: white;
+   border-width: 3px;
+   color: white;
+}
+
+.favorite-icon{
+   border-color: green;
 }

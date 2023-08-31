@@ -1,6 +1,6 @@
 // const jwt = require('jsonwebtoken');
 const Book = require('../../models/book');
-module.exports = { addReadBook, getReadBook, deleteReadBook, updateReview, getReadBookWithFavoriteStatus, toggleFavoriteStatus  };
+module.exports = { addReadBook, getReadBook, deleteReadBook, updateReview, getReadBookWithFavoriteStatus, toggleFavoriteStatus };
 
 async function addReadBook(req, res) {
     try {
@@ -51,15 +51,13 @@ async function updateReview(req, res) {
 }
 
 
-async function getReadBookWithFavoriteStatus(req, res){
+async function getReadBookWithFavoriteStatus(req, res) {
     try {
         const userId = req.params.userId;
         const books = await Book.find({ user: userId });
-        // determine the favorite status for each book
-        // and attach it to the book objects before sending the response
         const booksWithFavoriteStatus = books.map(book => ({
             ...book.toObject(),
-            isFavorite: false 
+            isFavorite: false
         }));
         res.json(booksWithFavoriteStatus);
     } catch (error) {
@@ -68,7 +66,7 @@ async function getReadBookWithFavoriteStatus(req, res){
     }
 };
 
-async function toggleFavoriteStatus (req, res){
+async function toggleFavoriteStatus(req, res) {
     try {
         const bookId = req.params.bookId;
         const book = await Book.findById(bookId);

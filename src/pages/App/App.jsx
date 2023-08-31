@@ -12,7 +12,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
-    <main>
+    <main className='main-app-page'>
       {user ? (
 
         <>
@@ -33,7 +33,7 @@ export default function App() {
 
         
       )}
-      <footer>Questions about books or need some reading recommendations? Send us a message at: hello@novelnestreads.co.uk</footer>
+      <footer>Questions about Novel Nest or need some reading recommendations? Send us a message at: hello@novelnestreads.co.uk</footer>
       
     </main>
 

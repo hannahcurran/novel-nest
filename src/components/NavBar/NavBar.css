@@ -1,5 +1,5 @@
 .logo-img{
-    width: 12%; /* Adjust the width to your desired size */
+    width: 8%; /* Adjust the width to your desired size */
     height: auto; /* Maintains the aspect ratio of the image */
     vertical-align: middle; /* Aligns the image vertically within the link */
     border-radius: 15px;
@@ -7,10 +7,11 @@
 }
 
 .nav-link {
-    color: #5b23f2;
+    color: #f70776;
     font-family: 'Quicksand', sans-serif;
+    font-size: large;
 }
 
 .nav-link:hover{
-    color: #a7bef3;
+    color: #c5065e;
 }

@@ -19,9 +19,9 @@ export default function NavBar({ user, setUser }) {
                     <HStack spacing='20px'>
                         <img src={NNlogo} alt="Logo" className="logo-img" />
                         {/* <Link to="/"><img src={NNlogo} alt="Logo" /></Link> */}
-                        <Link to="/books" className="nav-link">Current Reads  |</Link>
-                        <Link to="/books/read" className="nav-link">Read  |</Link>
-                        <Link to="/books/wanttoread" className="nav-link">Want To Read  |</Link>
+                        <Link to="/books" className="nav-link">Current Reads &nbsp; | &nbsp; </Link>
+                        <Link to="/books/read" className="nav-link">Read &nbsp; | &nbsp; </Link>
+                        <Link to="/books/wanttoread" className="nav-link">Want To Read &nbsp; | &nbsp; </Link>
                         <Link to="" onClick={handleLogOut} className="nav-link">Log Out  </Link>
                     </HStack>
                 </box>

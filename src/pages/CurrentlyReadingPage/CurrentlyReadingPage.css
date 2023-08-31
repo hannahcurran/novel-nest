@@ -2,24 +2,26 @@
     font-family: 'Quicksand', sans-serif;
     padding: 50px;
     min-height: 100vh;
- 
- 
+
+
 }
 
 h1 {
-    color: #430dd5;
+    color: #f70776;
     font-family: 'Quicksand', sans-serif;
     /* display: flex; */
-    justify-content: center; /* Center horizontally */
- 
+    justify-content: center;
+    /* Center horizontally */
+
 }
 
 h2,
 h3 {
-    color: #5b23f2;
+    color: #f70776;
     font-family: 'Quicksand', sans-serif;
     /* display: flex; */
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
+    /* Center horizontally */
 
 }
 
@@ -28,83 +30,101 @@ h3 {
     text-align: center;
     padding: 10px;
     margin: 15px;
-    color:#5b23f2;
-    border:20px;
+    color: black;
+    border: 20px;
     font-family: 'Quicksand', sans-serif;
     /* display: flex; */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Use the full viewport height */
-    flex-direction: column; /* Stack items vertically */
-   
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+    /* Use the full viewport height */
+    flex-direction: column;
+    /* Stack items vertically */
+
 }
 
 .input-container {
-    flex-direction: center;;
-    background-color: #CDD9F8;
+    flex-direction: center;
+    ;
+    /* background-color:; */
     padding: 10px;
     margin: 5px;
     border-radius: 15px;
     font-family: 'Quicksand', sans-serif;
-    border-color: #5b23f2;
+    border-color: #f70776;
     border-style: solid;
     border-width: 3px;
-  
-   
-
+       background-color: #e6e6e6;
 
 }
 
-.currentlyReadingForm{
+.currentlyReadingForm {
     /* display: flex; */
- 
-    align-items: center; /* Center vertically */   
-    
-    
+
+    align-items: center;
+    /* Center vertically */
+
+
 }
 
 .currently-reading-display-card {
     text-align: center;
-    /* background-color: #CDD9F8; */
+    background-color: #F5F5F5;
+    border-color: #e6e6e6;
     border-radius: 15px;
     padding: 15px;
     margin: 20px;
     width: auto;
     max-width: 100%;
-    color: #430dd5;
-    border-color: grey;
-    border-style: solid;
-    border-width: 1px;
+    /* color: #430dd5; */
+      border-style: solid;
+    border-width: 3px;
 
 }
 
 .submit-btn {
-    color: white;
-    background-color: #a7bef3;
-    font-size: 18px;
-    border-color: white;
-    padding: 4px;
+    font-size: 15px;
+    padding: 5px;
     margin: 5px;
     font-family: 'Quicksand', sans-serif;
-    border-color: #5b23f2;
+    border-color: #f70776;
     border-style: solid;
-    border-width: 1px;
+    border-width: 3px;
     border-radius: 10px;
-
 
 
 }
 
-.add-to-list-btn {
-    background-color: #a7bef3;
-    /* border-color: #5b23f2; */
-    color: white;
-    font-size: 18px;
+.current-book-submit-btn {
+    font-size: 15px;
     padding: 5px;
     margin: 5px;
     font-family: 'Quicksand', sans-serif;
-    border-color: #5b23f2;
+    border-color: darkgray;
     border-style: solid;
-    border-width: 1px;
-     border-radius: 10px;
+    border-width: 2px;
+    border-radius: 10px;
+    color: #c5065e;
+
+}
+
+.current-book-submit-btn:hover,
+.add-to-list-btn:hover {
+    background-color: #c5065e;
+    border-color: white;
+    border-width: 3px;
+    color: white;
+}
+
+.add-to-list-btn {
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Quicksand', sans-serif;
+    border-color: darkgray;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
 }

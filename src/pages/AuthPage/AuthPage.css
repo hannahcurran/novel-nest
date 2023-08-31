@@ -1,69 +1,82 @@
 h1 {
-    color: #430dd5;
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-  
-  }
-  
-  h2,
-  h3 {
-    color: #5b23f2;
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-  
-  }
+  color: #f70776;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
 
-  /* .AuthPage-text{
-    font-family: 'Quicksand', sans-serif;
-    justify-content: center; /* Center horizontally} */
- 
+}
 
+/* .auth-h2{
 
-  .banner-img{
-    border-radius: 15px;
-
-  }
-
-  .signup-form-container{
-    flex-direction: center;;
-    background-color: #CDD9F8;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 15px;
-    font-family: 'Quicksand', sans-serif;
-    border-color: #5b23f2;
-    border-style: solid;
-    border-width: 3px;
-  }
-
-  /* .login-form-container{
-    flex-direction: center;;
-    background-color: #CDD9F8;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 15px;
-    font-family: 'Quicksand', sans-serif;
-    border-color: #5b23f2;
-    border-style: solid;
-    border-width: 3px;
-
-  } */
-
-  .submit-btn {
-    color: white;
-    background-color: #a7bef3;
-    font-size: 18px;
-    border-color: white;
-    padding: 4px;
-    font-family: 'Quicksand', sans-serif;
-    border-color: #5b23f2;
-    border-style: solid;
-    border-width: 1px;
-    text-align: center;
-    grid-column: span 2;
+} */
+/* h2,
+h3 {
+  color: #5b23f2;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
 
 
 
+.banner-img {
+  border-radius: 15px;
+  width: 50%;
+  height: auto;
+  justify-content: center;
+
+}
+
+.AuthPage-text{
+  color: #f70776;
+}
+
+.signup-form-container {
+  flex-direction: center;
+  ;
+  /* background-color: #CDD9F8; */
+  padding: 20px;
+  margin: 5px;
+  border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
+  border-color: #f70776;
+  border-style: solid;
+  border-width: 3px;
+  width: 30%;
+}
+
+.login-form-container {
+  flex-direction: center;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
+  border-color: #f70776;
+  border-style: solid;
+  border-width: 3px;
+  width: 30%;
+
+}
+
+.submit-btn {
+  /* color: ; */
+  /* background-color: #a7bef3; */
+  font-size: 15px;
+  border-color: white;
+  padding: 4px;
+  font-family: 'Quicksand', sans-serif;
+  border-color: #f70776;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  /* grid-column: span 2; */
+
+}
+
+.submit-btn:hover {
+  background-color: #c5065e;
+  border-color: white;
+  border-width: 3px;
+  color: white;
 }

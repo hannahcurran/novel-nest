@@ -7,12 +7,12 @@
   /* background-color: #F5F5F5; */
   /* background-color: #CCCC66; */
   /* background-color: #e0e0eb; */
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 
 h1 {
-  color: #430dd5;
+  color: #f70776;
   font-family: 'Quicksand', sans-serif;
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -21,7 +21,7 @@ h1 {
 
 h2,
 h3 {
-  color: #5b23f2;
+  color: #f70776;
   font-family: 'Quicksand', sans-serif;
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -34,7 +34,7 @@ footer{
   align-items: center; /* Center vertically */
   font-family: 'Quicksand', sans-serif;
   bottom: 0;
-  color: #5b23f2;
+  color: #c5065e;
 
 }
 
