@@ -69,7 +69,7 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
                             <Box as="span" flex='1' textAlign='left'>
                                 <p className="review-title">Review</p>
                             </Box>
-                            <AccordionIcon />
+                            <AccordionIcon color={"gray"} />
                         </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
@@ -95,7 +95,8 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
                 </button>
             </div>
             <div>
-                <button onClick={() => onDelete(readBook._id)} className="readbook-submit-btn">Delete</button>
+                <br />
+                <button onClick={() => onDelete(readBook._id)} className="readbook-submit-btn">Delete This Book & Review</button>
             </div>
         </div>
     )

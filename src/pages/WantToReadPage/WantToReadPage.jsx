@@ -52,46 +52,43 @@ export default function WantToReadPage({ user }) {
 
     return (
         <body className="body">
-        <>
-            <h2>Want To Read</h2>
+            <>
+                <h2>Want To Read</h2>
 
+
+                <form className="wantToReadForm">
+
+                    <div className="input-container">
+                        <input
+                            type="text"
+                            placeholder="Title"
+                            name="title"
+                            value={newWantBook.title}
+                            onChange={handleChange}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Author"
+                            name="author"
+                            value={newWantBook.author}
+                            onChange={handleChange}
+                        />
+                        <div >
+                            <button type="submit" onClick={handleNewWant} className='add-to-list-btn'>Add To List</button>
+                        </div>
+                    </div>
+                </form>
+
+            </>
             <ul className="wantBooks-container">
                 {wantBooksToShow.map((wantBook, idx) => (
                     <WantBookCard key={wantBook._id} wantBook={wantBook} onDelete={handleDeleteBook} />
-                    
+
 
                 ))}
-             
+
             </ul>
-            <form className="wantToReadForm">
-
-                <div className="input-container">
-                    <input
-                        type="text"
-                        placeholder="Title"
-                        name="title"
-                        value={newWantBook.title}
-                        onChange={handleChange}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Author"
-                        name="author"
-                        value={newWantBook.author}
-                        onChange={handleChange}
-                    />
-                    <div >
-                        <button type="submit" onClick={handleNewWant} className='add-to-list-btn'>Add To List</button>
-                    </div>
-
-
-
-
-                </div>
-            </form>
-
-        </>
-</body>
+        </body>
     );
 }
 
