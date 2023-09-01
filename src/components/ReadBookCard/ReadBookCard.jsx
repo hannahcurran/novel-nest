@@ -74,18 +74,17 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
                         </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
-                        <Editable value={editedReview} onChange={(value)=> setEditedReview(value)} >
+                        <Editable value={editedReview} onChange={(value) => setEditedReview(value)} >
 
 
                             <EditablePreview />
                             <EditableTextarea />
-
+                            {/* <button onClick={() => onEdit(readBook)} className="readbook-submit-btn">Edit</button> */}
+                            
                         </Editable>
                         <br />
-                        <button onClick={() => onEdit(readBook)} className="readbook-submit-btn">Edit</button>
-                        <br /> <br />
-                        {console.log(readBook)}
-                        <button onClick={() => handleSaveEdit(readBook._id, editedReview)} className="readbook-submit-btn">Save</button>
+                        {/* <button onClick={() => onEdit(readBook)} className="readbook-submit-btn">Edit</button> */}
+                        <button onClick={() => handleSaveEdit(readBook._id, editedReview)} className="readbook-submit-btn">&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;</button>
 
                     </AccordionPanel>
                 </AccordionItem>

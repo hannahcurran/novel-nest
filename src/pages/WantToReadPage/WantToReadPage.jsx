@@ -52,9 +52,9 @@ export default function WantToReadPage({ user }) {
     const wantBooksToShow = wantBooks.filter(book => book.status === 'want to read');
 
     return (
-        <body className="body">
+        <main className='main'>
             <>
-            <header className='want-to-read-header'><img src={NNwanttoread} /></header>
+            <header className='want-to-read-header'><img src={NNwanttoread} style={{ width: '70%' }}/></header>
 
 
                 <form className="wantToReadForm">
@@ -95,7 +95,7 @@ export default function WantToReadPage({ user }) {
                 ))}
 
             </ul>
-        </body>
+        </main>
     );
 }
 

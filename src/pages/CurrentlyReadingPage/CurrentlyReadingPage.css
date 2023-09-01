@@ -4,10 +4,14 @@
     min-height: 100vh;
 }
 
-.currently-reading-header{
-    width:50%;
- 
+.currently-reading-header {
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); */
+    display: flex;            
+    justify-content: center;  
+    align-items: center;      
+    flex-direction: column;  
 }
+
 
 h1 {
     color: #f70776;
@@ -36,16 +40,11 @@ h3 {
     color: black;
     border: 20px;
     font-family: 'Quicksand', sans-serif;
-    /* display: flex; */
     justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    /* Center vertically */
-    height: 100vh;
-    /* Use the full viewport height */
-    flex-direction: column;
-    /* Stack items vertically */
-
+     align-items: center;
+     height: 100vh;
+     flex-direction: column;
+   
 }
 
 .input-container {
@@ -60,15 +59,21 @@ h3 {
     border-style: solid;
     border-width: 3px;
     background-color: #F5F5F5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  
+
 
 }
 
 .currentlyReadingForm {
-    /* display: flex; */
-
-    align-items: center;
-    /* Center vertically */
-
+    display: flex;            
+    justify-content: center;  
+    align-items: center;      
+    flex-direction: column;
+    padding:20px;
+    border: 10px;
+ 
 
 }
 
@@ -84,7 +89,17 @@ h3 {
     /* color: #430dd5; */
     border-style: solid;
     border-width: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    
 
+
+}
+
+.input-container:hover,
+.currently-reading-display-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
+    
 }
 
 /* .submit-btn {
@@ -130,5 +145,5 @@ h3 {
     border-style: solid;
     border-width: 2px;
     border-radius: 5px;
-    color:#c5065e;
+    color: #c5065e;
 }

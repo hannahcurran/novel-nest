@@ -1,23 +1,49 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    padding: 50px;
+    min-height: 100vh;
+
+}
+
+h1,
+h2,
+h3 {
+    color: #f70776;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
 .want-to-read-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 50%;
+    margin: 0 auto;
 
 }
 
 .want-book-card {
     background-color: #F5F5F5;
-    
     border-radius: 15px;
     padding: 30px;
     border-color: #e6e6e6;
     border-radius: 15px;
     padding: 20px;
     margin: 20px;
-    width: 30%;
-    max-width: 100%;
+    width: 40%;
+    max-width: 80%;
     border-style: solid;
     border-width: 2px;
     font-family: 'Quicksand', sans-serif;
-   
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+.want-book-card:hover{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .want-book-submit-btn {
@@ -29,7 +55,7 @@
     border-style: solid;
     border-width: 2px;
     border-radius: 5px;
-    color:#c5065e;
+    color: #c5065e;
 
 }
 
@@ -39,5 +65,7 @@
     border-width: 3px;
     color: white;
 }
+
+
 
 

@@ -299,86 +299,90 @@ export default function ReadBooksPage({ user }) {
     const readBooksToShow = readBooks.filter(book => book.status === 'read');
 
     return (
+        <main className='main'>
 
-        <>
-          <header className='read-reviews-header'><img src={NNreadandreviews} /></header>
 
-            <form className="readBookForm">
-                <div className="readbooks-input-container">
-                    <h3>Finished your book?</h3>
-                    <h5>Don't forget to leave a review...</h5>
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="Title"
-                        name="title"
-                        value={newReadBook.title}
-                        onChange={handleChange}
-                    />
-                    <br />
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="Author"
-                        name="author"
-                        value={newReadBook.author}
-                        onChange={handleChange}
-                    />
-                    <br />
-                    <br />
-                    <input
-                        type="text"
-                        placeholder="What did you think?"
-                        name="review"
-                        value={newReadBook.review}
-                        onChange={handleReviewChange}
-                    />
-                    <br />
-                    <br />
-                    
+            <>
+                <header className='read-reviews-header'>
+                    <img src={NNreadandreviews} alt="Read" style={{ width: '35%' }} />
+                </header>
+
+                <form className="readBookForm">
+                    <div className="readbooks-input-container">
+                        <h3>Finished your book?</h3>
+                        <h5>Don't forget to leave a review...</h5>
+                        <br />
+                        <input
+                            type="text"
+                            placeholder="Title"
+                            name="title"
+                            value={newReadBook.title}
+                            onChange={handleChange}
+                        />
+                        <br />
+                        <br />
+                        <input
+                            type="text"
+                            placeholder="Author"
+                            name="author"
+                            value={newReadBook.author}
+                            onChange={handleChange}
+                        />
+                        <br />
+                        <br />
+                        <input
+                            type="text"
+                            placeholder="What did you think?"
+                            name="review"
+                            value={newReadBook.review}
+                            onChange={handleReviewChange}
+                        />
+                        <br />
+                        <br />
+
                         <button type="submit" onClick={handleNewRead} className='read-review-add-btn'>Add</button>
-            
 
 
 
 
 
-                    {editingReview && (
-                        <div>
-                            <input
-                                type="text"
-                                value={editingReview.review}
-                                onChange={evt => setEditingReview({ ...editingReview, review: evt.target.value })}
-                            />
 
-                            <button onClick={() => handleSaveEdit(editingReview._id, editingReview.review)}>
-                                Save
-                            </button>
-                            <button onClick={() => setEditingReview(null)}>Cancel</button>
+                        {editingReview && (
+                            <div>
+                                <input
+                                    type="text"
+                                    value={editingReview.review}
+                                    onChange={evt => setEditingReview({ ...editingReview, review: evt.target.value })}
+                                />
+
+                                <button onClick={() => handleSaveEdit(editingReview._id, editingReview.review)}>
+                                    Save
+                                </button>
+                                <button onClick={() => setEditingReview(null)}>Cancel</button>
 
 
-                        </div>
-                    )}
+                            </div>
+                        )}
 
-                </div>
-            </form>
+                    </div>
+                </form>
 
-            <ul className="readBooks-container">
-                {readBooksToShow.map((readBook, idx) => (
-                    <ReadBookCard key={readBook._id}
-                        readBook={readBook}
-                        onDelete={handleDeleteBook}
-                        onEdit={handleEdit}
-                        onToggleFavorite={() => handleToggleFavorite(readBook._id)}
-                        handleSaveEdit={handleSaveEdit} 
+                <ul className="readBooks-container">
+                    {readBooksToShow.map((readBook, idx) => (
+                        <ReadBookCard key={readBook._id}
+                            readBook={readBook}
+                            onDelete={handleDeleteBook}
+                            onEdit={handleEdit}
+                            onToggleFavorite={() => handleToggleFavorite(readBook._id)}
+                            handleSaveEdit={handleSaveEdit}
                         />
 
-                ))}
-            </ul>
+                    ))}
+                </ul>
 
 
-        </>
-
+            </>
+        </main>
     );
 }
 

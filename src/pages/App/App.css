@@ -3,13 +3,33 @@
   
 }
 
-.body{
-  /* background-color: #F5F5F5; */
-  /* background-color: #CCCC66; */
-  /* background-color: #e0e0eb; */
-  /* border-radius: 15px; */
+html, body, .main {
+  height: 100%;
+  margin: 0;
 }
 
+.main {
+  min-height: calc(100vh - 60px); /* subtracting our footer height */
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  /* margin-top: auto; 
+  padding: 1em; 
+  background-color: #e6e6e6; 
+    border-radius: 10px; */
+  border-top: 2px solid #f70776; 
+
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: 'Quicksand', sans-serif;
+  bottom: 0;
+  color: #c5065e;
+  height: 60px; /* This is our set footer height */
+  background-color: #f0f0f0; 
+}
 
 h1 {
   color: #f70776;

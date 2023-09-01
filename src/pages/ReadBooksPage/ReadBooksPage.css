@@ -1,12 +1,13 @@
-.read-reviews-header{
-   width:50%;
+.read-reviews-header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 
 }
 
-.readbooks-input-container{
+.readbooks-input-container {
    flex-direction: center;
-   ;
-   /* background-color:; */
    padding: 10px;
    margin: 5px;
    border-radius: 15px;
@@ -15,30 +16,42 @@
    border-style: solid;
    border-width: 3px;
    background-color: #F5F5F5;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+   transition: box-shadow 0.3s ease-in-out;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.readbooks-input-container:hover,
+.read-book-card:hover {
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .read-book-card {
    background-color: #F5F5F5;
    border-radius: 15px;
-   padding:20px;
+   padding: 20px;
    border-color: #e6e6e6;
    border-radius: 15px;
-   padding: 20px;;
+   padding: 20px;
    margin: 20px;
    width: 30%;
    max-width: 100%;
-   /* color: #430dd5; */
-   /* border-color: #e6e6e6; */
    border-style: solid;
    border-width: 2px;
    font-family: 'Quicksand', sans-serif;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+   transition: box-shadow 0.3s ease-in-out;
 }
 
-.favorite-text{
-   color:#f70776;
+.favorite-text {
+   color: #f70776;
 }
 
-.book-title, .book-author, .review-title{
+.book-title,
+.book-author,
+.review-title {
    color: slategray;
 }
 
@@ -56,7 +69,8 @@
 
 }
 
-.readbook-submit-btn, .read-review-add-btn {
+.readbook-submit-btn,
+.read-review-add-btn {
    font-size: 15px;
    padding: 5px;
    margin: 5px;
@@ -65,15 +79,14 @@
    border-style: solid;
    border-width: 2px;
    border-radius: 5px;
-   color:#c5065e;
+   color: #c5065e;
 
 }
 
-.readbook-submit-btn:hover, .read-review-add-btn:hover {
+.readbook-submit-btn:hover,
+.read-review-add-btn:hover {
    background-color: #c5065e;
    border-color: white;
    border-width: 3px;
    color: white;
 }
-
-

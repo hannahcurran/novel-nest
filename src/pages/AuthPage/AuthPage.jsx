@@ -20,6 +20,7 @@ import {
 
 export default function AuthPage({ setUser }) {
     return (
+        <main className='main'>
         <VStack spacing={4} className='main-auth-page'>
             <Box w="80%">
                 <img src={NNbanner} alt="Logo" className="banner-img" />
@@ -43,13 +44,13 @@ export default function AuthPage({ setUser }) {
 <br />
             <Text className='AuthPage-text'>
              
-                    Novel Nest is more than an app—it's your go-to for tracking reads, sharing insights, and planning literary escapades. <br />
+                    Novel Nest is more than an app—it's your go-to for tracking reads, chirping about insights, and planning literary escapades. <br />
 
 
                     Embrace the Buzz: Boost your reading list with every pick. <br />
-                    Be the Guru: Voice your thoughts on <br />
-                    Curate Your List: Note upcoming books—your gateway to endless <br />
-                    Dive into the Novel Nest realm and kickstart your bookish journey today!
+                    Sing Your Song: Voice your thoughts and share your ratings.<br />
+                    Nest Your Reads: Note upcoming books — your gateway to endless stories. <br />
+                    Soar into the Novel Nest skies and kickstart your bookish journey today!
                     <br />
                     <br />
                     [Sign Me Up for the Fun!]
@@ -63,6 +64,7 @@ export default function AuthPage({ setUser }) {
 
 
         </VStack>
+        </main>
     )
 }
 

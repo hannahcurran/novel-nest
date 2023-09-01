@@ -72,11 +72,13 @@ export default function CurrentlyReadingPage({ user }) {
 
     const currentlyReadingBooksToShow = currentlyReadingBooks.filter(book => book.status === 'currently reading');
     return (
-        <body className="body">
+        <main className='main'>
             
    
         <>
-        <header className='currently-reading-header'><img src={NNcurrentlyreading} /></header>
+        <header className='currently-reading-header'>
+    <img src={NNcurrentlyreading} alt="Currently Reading" style={{ width: '50%' }} />
+</header>
             {/* <h1>Hi there, {user.name}</h1> */}
          <br />
          {/* <h2>Your Daily Streak: {user.dailyStreak}</h2> */}
@@ -94,6 +96,7 @@ export default function CurrentlyReadingPage({ user }) {
                 <h3>Any others?</h3>
 
                 <div className="input-container">
+                <br />
                     <input
                         type="text"
                         placeholder="Title"
@@ -101,6 +104,7 @@ export default function CurrentlyReadingPage({ user }) {
                         value={newCurrentBook.title}
                         onChange={handleChange}
                     />
+                    <br />    <br />
                     <input
                         type="text"
                         placeholder="Author"
@@ -108,6 +112,7 @@ export default function CurrentlyReadingPage({ user }) {
                         value={newCurrentBook.author}
                         onChange={handleChange}
                     />
+                        <br />    <br />
                     <div>
                         <button type="submit" onClick={handleNewCurrent} className='add-to-list-btn'>Add To List</button>
                     </div>
@@ -116,7 +121,7 @@ export default function CurrentlyReadingPage({ user }) {
             </ul>
             
         </>
-        </body>
+        </main>
     );
 
 }
