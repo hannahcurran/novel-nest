@@ -6,10 +6,10 @@
 
 .currently-reading-header {
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); */
-    display: flex;            
-    justify-content: center;  
-    align-items: center;      
-    flex-direction: column;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -41,17 +41,17 @@ h3 {
     border: 20px;
     font-family: 'Quicksand', sans-serif;
     justify-content: center;
-     align-items: center;
-     height: 100vh;
-     flex-direction: column;
-   
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
 }
 
 .input-container {
     flex-direction: center;
     ;
     /* background-color:; */
-    padding: 10px;
+    padding: 20px;
     margin: 5px;
     border-radius: 15px;
     font-family: 'Quicksand', sans-serif;
@@ -61,19 +61,16 @@ h3 {
     background-color: #F5F5F5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
-  
-
 
 }
 
 .currentlyReadingForm {
-    display: flex;            
-    justify-content: center;  
-    align-items: center;      
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    padding:20px;
+    padding: 20px;
     border: 10px;
- 
 
 }
 
@@ -91,15 +88,13 @@ h3 {
     border-width: 3px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
-    
-
 
 }
 
 .input-container:hover,
 .currently-reading-display-card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
-    
+
 }
 
 /* .submit-btn {
@@ -146,4 +141,19 @@ h3 {
     border-width: 2px;
     border-radius: 5px;
     color: #c5065e;
+}
+
+.blurb-text{
+    color: #f70776;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-weight: 100;
+  text-align: center;
+  margin: 0;
+  animation: shadows 2.5s ease-in infinite;
+  letter-spacing: 0.1rem;
 }

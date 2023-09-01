@@ -3,7 +3,7 @@ import CurrentBookCard from '../../components/CurrentBookCard/CurrentBookCard';
 import * as currentBookAPI from "../../utilities/current-book-api";
 import './CurrentlyReadingPage.css';
 // import { updateCurrentBookStatus } from "../../utilities/current-book-api";
-import { Grid, GridItem, Container } from '@chakra-ui/react';
+import { Grid, GridItem, Container, Box } from '@chakra-ui/react';
 import NavBar from '../../components/NavBar/NavBar';
 // import '../App/App.css';
 import { dailyStreak } from '../../components/LoginForm/LoginForm';
@@ -77,12 +77,19 @@ export default function CurrentlyReadingPage({ user }) {
    
         <>
         <header className='currently-reading-header'>
-    <img src={NNcurrentlyreading} alt="Currently Reading" style={{ width: '50%' }} />
+    <img src={NNcurrentlyreading} alt="Currently Reading" style={{ width: '45%' }} />
 </header>
+<br />
+<Box className="blurb-text">
+            Got a book in hand? <br />
+             Add it to this list and keep track of all your books!
+            
+        </Box>
+
             {/* <h1>Hi there, {user.name}</h1> */}
-         <br />
+        
          {/* <h2>Your Daily Streak: {user.dailyStreak}</h2> */}
-         <br />
+   
             {/* <h2>Your Current Books:</h2> */}
          
                      <ul className="currentBooks-container">
@@ -93,9 +100,11 @@ export default function CurrentlyReadingPage({ user }) {
                 ))}
             
             <form className="currentlyReadingForm">
-                <h3>Any others?</h3>
+                {/* <h3>Any others?</h3> */}
+            
 
                 <div className="input-container">
+                <h5>Keep your list growing...</h5>
                 <br />
                     <input
                         type="text"

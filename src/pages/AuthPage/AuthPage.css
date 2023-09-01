@@ -54,12 +54,23 @@
   color: white;
 } */
 
+.login-form-container {
+  /* remove display: flex; and justify-content: center; */
+  padding: 0;
+  /* adjust as needed */
+  margin: 0;
+  /* adjust as needed */
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
 
 h1 {
   color: #f70776;
   font-family: 'Quicksand', sans-serif;
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
+  /* Center horizontally */
 }
 
 .banner-img {
@@ -87,8 +98,8 @@ h1 {
   margin: 5px;
   font-family: 'Quicksand', sans-serif;
   border: 3px solid #f70776;
-  width: 100%;  
-  max-width: 400px; 
+  width: 100%;
+  max-width: 400px;
   background-color: #F5F5F5;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -116,5 +127,73 @@ h1 {
   text-align: center;
   font-size: 24px;
   font-family: 'Quicksand', sans-serif;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-weight: 100;
+  text-align: center;
+  margin: 0;
+  animation: shadows 1.8s ease-in infinite;
+  letter-spacing: 0.1rem;
 }
 
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+
+  10% {
+    transform: translate(-3px, -3px);
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+
+  20% {
+    transform: translate(-6px, -6px);
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+
+  30% {
+    transform: translate(-9px, -9px);
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+
+  40% {
+    transform: translate(-12px, -12px);
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+
+  50% {
+    transform: translate(-12px, -12px);
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+
+  60% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+
+  70% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+
+  80% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+
+  90% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+
+  100% {
+    text-shadow: none;
+  }
+}

@@ -54,8 +54,8 @@ export default function CurrentBookCard({ currentBook, onDelete, onFinished }) {
             {currentBook.status !== 'finished' ? (
                 <>
                     <Box className='currently-reading-display-card'>
-                        <p><strong>Title:</strong> {currentBook.title}</p>
-                        <p>Author: {currentBook.author}</p>
+                        <p className="book-title">Title:</p><p>{currentBook.title}</p>
+                        <p className="book-author">Author: </p> <p>{currentBook.author}</p>
                         <button onClick={() => onFinished(currentBook._id)} className='current-book-submit-btn'>I've Finished This Book!</button>
                         <button onClick={() => onDelete(currentBook._id)} className='current-book-submit-btn'>Remove</button>
                     </Box>

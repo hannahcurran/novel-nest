@@ -1,7 +1,7 @@
-.logo-img{
-    width: 8%; /* Adjust the width to your desired size */
-    height: auto; /* Maintains the aspect ratio of the image */
-    vertical-align: middle; /* Aligns the image vertically within the link */
+/* .logo-img{
+    width: 8%; 
+    height: auto;
+    vertical-align: middle;  
     border-radius: 15px;
    
 }
@@ -22,4 +22,57 @@ h4{
     font-family: 'Quicksand', sans-serif;
     color: #f70776;
   
+} */
+
+/* Global settings for the navbar */
+nav {
+    display: flex; /* Convert the navbar to a flex container */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    background-color: #f5f5f5; /* light gray */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top:0;
+    z-index:1000;
+    padding: 0 15px; /* Add some padding to the sides of the navbar */
 }
+
+.navbar-left, .navbar-right {
+    display: flex;
+    flex: 1; /* Take up equal amounts of space on either side of the center content */
+    justify-content: center; /* Center the links */
+}
+
+.logo-img {
+    width: 7%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 15px;
+    margin-right: 15px; /* Add some spacing to the right of the logo */
+}
+
+.nav-link {
+    color: #f70776;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em; /* Use em for scalable sizes */
+    margin: 0 10px; /* Add horizontal margins for spacing between links */
+    text-decoration: none; /* Remove underline from links */
+    letter-spacing: 0.5px; /* Adjust as per your preference */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-link:hover {
+    color: #c5065e;
+    text-shadow: 0 6px 20px #c5065e;
+}
+
+.nav-link:visited {
+    color:#f70776;
+}
+
+h4 {
+    font-family: 'Quicksand', sans-serif;
+    color: #f70776;
+    margin-right: 15px; /* Add some spacing to the right of the user greeting */
+}
+

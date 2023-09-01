@@ -21,29 +21,29 @@ import {
 export default function AuthPage({ setUser }) {
     return (
         <main className='main'>
-        <VStack spacing={4} className='main-auth-page'>
-            <Box w="80%">
-                <img src={NNbanner} alt="Logo" className="banner-img" />
-            </Box>
-            <Text className='auth-h2' fontWeight="bold">
-                Welcome to Novel Nest, where your reading journey takes flight!
-            </Text>
-            <Accordion defaultIndex={[0]} allowToggle>
-                <AccordionItem>
-                    <AccordionButton className='AuthPage-text'>
-                        <Box flex="1" textAlign="left" className='AuthPage-text'>
-                            User Login
-                        </Box>
-                        <AccordionIcon />
-                    </AccordionButton>
-                    <AccordionPanel>
-                        <LoginForm setUser={setUser} />
-                    </AccordionPanel>
-                </AccordionItem>
-            </Accordion>
-<br />
-            <Text className='AuthPage-text'>
-             
+            <VStack spacing={4} className='main-auth-page'>
+                <Box w="80%">
+                    <img src={NNbanner} alt="Logo" className="banner-img" />
+                </Box>
+                <Text className='auth-h2' fontWeight="bold">
+                    Welcome to Novel Nest, where your reading journey takes flight!
+                </Text>
+                <Accordion defaultIndex={[0]} allowToggle>
+                    <AccordionItem>
+                        <AccordionButton className='AuthPage-text'>
+                            <Box flex="1" textAlign="left" className='AuthPage-text'>
+                                User Login
+                            </Box>
+                            <AccordionIcon />
+                        </AccordionButton>
+                        <AccordionPanel>
+                            <LoginForm setUser={setUser} />
+                        </AccordionPanel>
+                    </AccordionItem>
+                </Accordion>
+                <br />
+                <Text className='AuthPage-text'>
+
                     Novel Nest is more than an app—it's your go-to for tracking reads, chirping about insights, and planning literary escapades. <br />
 
 
@@ -54,16 +54,10 @@ export default function AuthPage({ setUser }) {
                     <br />
                     <br />
                     [Sign Me Up for the Fun!]
-              
-            </Text>
-            <SignUpForm setUser={setUser} />
 
-
-
-            {/* <LoginForm setUser={setUser} /> */}
-
-
-        </VStack>
+                </Text>
+                <SignUpForm setUser={setUser} />
+            </VStack>
         </main>
     )
 }
