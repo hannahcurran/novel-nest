@@ -12,7 +12,7 @@ export default function LoginForm({ setUser }) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
     setError('');
   }
-  const [dailyStreak, setDailyStreak] = useState(dailyStreak || '1 day! ')
+  // const [dailyStreak, setDailyStreak] = useState(dailyStreak || '1 day! ')
 
   // async function handleSubmit(evt) {
   //   // Prevent form from being submitted to the server

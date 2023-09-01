@@ -265,7 +265,7 @@ export default function ReadBooksPage({ user }) {
 
     async function handleSaveEdit(reviewId, newReviewContent) {
         try {
-            await readBookAPI.updateReview(reviewId, newReviewContent);
+            await readBookAPI.updateReview(reviewId, { review: newReviewContent });
             setReadBooks(prevReadBooks =>
                 prevReadBooks.map(book => {
                     if (book._id === reviewId) {
@@ -369,7 +369,9 @@ export default function ReadBooksPage({ user }) {
                         readBook={readBook}
                         onDelete={handleDeleteBook}
                         onEdit={handleEdit}
-                        onToggleFavorite={() => handleToggleFavorite(readBook._id)} />
+                        onToggleFavorite={() => handleToggleFavorite(readBook._id)}
+                        handleSaveEdit={handleSaveEdit} 
+                        />
 
                 ))}
             </ul>

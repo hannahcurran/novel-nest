@@ -79,7 +79,7 @@ export default function CurrentlyReadingPage({ user }) {
         <header className='currently-reading-header'><img src={NNcurrentlyreading} /></header>
             {/* <h1>Hi there, {user.name}</h1> */}
          <br />
-         <h2>Your Daily Streak: {user.dailyStreak}</h2>
+         {/* <h2>Your Daily Streak: {user.dailyStreak}</h2> */}
          <br />
             {/* <h2>Your Current Books:</h2> */}
          

@@ -25,8 +25,8 @@ const userSchema = new Schema({
             return ret;
         }
     },
-   dailyStreak:{lastLogin: { type: Date }
-}});
+//    dailyStreak:{lastLogin: { type: Date }
+});
 
 userSchema.pre('save', async function(next){
 //'this' is the user document

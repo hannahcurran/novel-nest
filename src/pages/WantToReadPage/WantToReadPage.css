@@ -1,36 +1,23 @@
-/* .wantBooks-container{
-    border-color: ;
-} */
+.want-to-read-header {
+    width: 50%;
 
-
-/* 
-.body {
-    font-family: 'Quicksand', sans-serif;
-    padding: 50px;
-    min-height: 100vh;
- 
-} */
-
-.want-to-read-header{
-    width:50%;
- 
 }
 
 .want-book-card {
     background-color: #F5F5F5;
+    
     border-radius: 15px;
-    padding: 20px;
+    padding: 30px;
     border-color: #e6e6e6;
     border-radius: 15px;
     padding: 20px;
-    ;
     margin: 20px;
     width: 30%;
     max-width: 100%;
-
     border-style: solid;
     border-width: 2px;
     font-family: 'Quicksand', sans-serif;
+   
 }
 
 .want-book-submit-btn {

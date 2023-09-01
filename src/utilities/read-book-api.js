@@ -17,7 +17,7 @@ export async function deleteReadBook(bookId) {
 }
 
 export async function updateReview(bookId, reviewContent) {
-    const response = await sendRequest(`${BASE_URL}/updateReview/${bookId}`, 'PUT', { review: reviewContent });
+    const response = await sendRequest(`${BASE_URL}/updateReview/${bookId}`, 'PUT', reviewContent);
     return response;
 }
 

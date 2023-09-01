@@ -51,12 +51,13 @@
 
 
 
-import React from "react";
+import React, { useState } from "react";
 // import { chakra, ChakraBaseProvider } from "@chakra-ui/react";
 import { Box, Stack, VStack, Editable, EditableInput, EditableTextarea, EditablePreview, ButtonGroup, IconButton, useEditableControls } from '@chakra-ui/react';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/accordion';
 
 export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavorite, handleSaveEdit }) {
+    const [editedReview, setEditedReview] = useState(readBook.review)
     return (
         <div className="read-book-card">
             <p className="book-title">Title:</p> <p>{readBook.title}</p>
@@ -73,7 +74,7 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
                         </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
-                        <Editable defaultValue={readBook.review}>
+                        <Editable value={editedReview} onChange={(value)=> setEditedReview(value)} >
 
 
                             <EditablePreview />
@@ -83,7 +84,8 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
                         <br />
                         <button onClick={() => onEdit(readBook)} className="readbook-submit-btn">Edit</button>
                         <br /> <br />
-                        <button onClick={() => handleSaveEdit(readBook.review)} className="readbook-submit-btn">Save</button>
+                        {console.log(readBook)}
+                        <button onClick={() => handleSaveEdit(readBook._id, editedReview)} className="readbook-submit-btn">Save</button>
 
                     </AccordionPanel>
                 </AccordionItem>
