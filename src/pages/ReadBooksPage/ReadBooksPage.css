@@ -64,7 +64,8 @@
    border-color: darkgray;
    border-style: solid;
    border-width: 2px;
-   border-radius: 10px;
+   border-radius: 5px;
+   color:#c5065e;
 
 }
 
@@ -75,6 +76,4 @@
    color: white;
 }
 
-/* .favorite-icon{
-   border-color: green;
-} */
+

@@ -28,8 +28,8 @@
     border-color: darkgray;
     border-style: solid;
     border-width: 2px;
-    border-radius: 10px;
-    color: #c5065e;
+    border-radius: 5px;
+    color:#c5065e;
 
 }
 
@@ -39,3 +39,5 @@
     border-width: 3px;
     color: white;
 }
+
+

@@ -5,63 +5,56 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 import './AuthPage.css';
 import NNbanner from '../../Images/NNbanner.png';
 // import NNlogin from '../../Images/NNlogin.png';
-import { Flex, Box, Stack, VStack, Editable, EditableInput, EditableTextarea, EditablePreview, ButtonGroup, IconButton, useEditableControls } from '@chakra-ui/react';
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/accordion';
+import {
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+    Box,
+    Flex,
+    Text,
+    VStack,
+    Button
+} from '@chakra-ui/react';
 
 export default function AuthPage({ setUser }) {
     return (
-        <main className='main-auth-page'>
-
-            <Accordion allowMultiple>
+        <VStack spacing={4} className='main-auth-page'>
+            <Box w="80%">
+                <img src={NNbanner} alt="Logo" className="banner-img" />
+            </Box>
+            <Text className='auth-h2' fontWeight="bold">
+                Welcome to Novel Nest, where your reading journey takes flight!
+            </Text>
+            <Accordion defaultIndex={[0]} allowToggle>
                 <AccordionItem>
-                    <h2>
-                        <AccordionButton>
-                            <Box flex="1" textAlign="left">
-                                User Login
-                            </Box>
-                            <AccordionIcon />
-                        </AccordionButton>
-                    </h2>
-                    <AccordionPanel pb={4}>
+                    <AccordionButton className='AuthPage-text'>
+                        <Box flex="1" textAlign="left" className='AuthPage-text'>
+                            User Login
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionButton>
+                    <AccordionPanel>
                         <LoginForm setUser={setUser} />
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
+<br />
+            <Text className='AuthPage-text'>
+             
+                    Novel Nest is more than an app—it's your go-to for tracking reads, sharing insights, and planning literary escapades. <br />
 
 
-
-
-
-
-            <header className='auth-header'><img src={NNbanner} alt="Logo" className="banner-img" /></header>
-            <br />
-
-            <h2 className='auth-h2'>Welcome to Novel Nest, where your reading journey takes flight!</h2>
-            <p className='AuthPage-text'>
-                <br />
-                Novel Nest isn't just an app; it's your trusty sidekick for keeping tabs on your reads, sharing your bookish insights, and planning your next literary adventures.
-
-                Embrace the Bookish Buzz:
-                <br />
-                <br />
-
-                Stay on Top of Your Reads: Keep a virtual bookmark on the books you're digging, and watch your reading list flourish with each tap!
-                <br />
-                <br />
-                Be the Book Guru: Share your thoughts on what you've read.
-                <br />
-                <br />
-                Curate Your Reading List: Jot down the books you're itching to dive into next – consider it your roadmap to a world of stories!
-                <br />
-                <br />
-                Ready to hop into the world of reading, reviews, and awesome book discoveries?
-                <br />
-                Hop on board Novel Nest now and let the bookish fun commence!
-                <br />
-                <br />
-                [Sign Me Up for the Fun]
-            </p>
-
+                    Embrace the Buzz: Boost your reading list with every pick. <br />
+                    Be the Guru: Voice your thoughts on <br />
+                    Curate Your List: Note upcoming books—your gateway to endless <br />
+                    Dive into the Novel Nest realm and kickstart your bookish journey today!
+                    <br />
+                    <br />
+                    [Sign Me Up for the Fun!]
+              
+            </Text>
             <SignUpForm setUser={setUser} />
 
 
@@ -69,6 +62,7 @@ export default function AuthPage({ setUser }) {
             {/* <LoginForm setUser={setUser} /> */}
 
 
-        </main>
+        </VStack>
     )
 }
+

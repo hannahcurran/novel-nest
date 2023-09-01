@@ -1,9 +1,9 @@
-h1 {
+/* h1 {
   color: #f70776;
   font-family: 'Quicksand', sans-serif;
   display: flex;
   justify-content: center;
-  /* Center horizontally */
+  /* Center horizontally 
 
 }
 
@@ -42,7 +42,7 @@ h1 {
   border-color: darkgray;
   border-style: solid;
   border-width: 2px;
-  border-radius: 10px;
+  border-radius: 5px;
   color: #c5065e;
 
 }
@@ -52,4 +52,69 @@ h1 {
   border-color: white;
   border-width: 3px;
   color: white;
+} */
+
+
+h1 {
+  color: #f70776;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center; /* Center horizontally */
 }
+
+.banner-img {
+  border-radius: 15px;
+  /* min-width: 400px; */
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.AuthPage-text {
+  color: #f70776;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.signup-form-container,
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 5px;
+  font-family: 'Quicksand', sans-serif;
+  border: 3px solid #f70776;
+  width: 100%;  
+  max-width: 400px; 
+  background-color: #F5F5F5;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn {
+  font-size: 15px;
+  padding: 5px;
+  margin: 5px;
+  font-family: 'Quicksand', sans-serif;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  color: #c5065e;
+}
+
+.submit-btn:hover {
+  background-color: #c5065e;
+  border-color: white;
+  border-width: 3px;
+  color: white;
+}
+
+.auth-h2 {
+  color: #f70776;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Quicksand', sans-serif;
+}
+
