@@ -59,7 +59,7 @@
    transition: box-shadow 0.3s ease-in-out;
    /* width: calc(30% - 40px); */
    max-width: 30%;
-   width:25%;
+   width: 25%;
    /* Deducting the margin from width to ensure the card doesn't expand beyond its boundary */
    transition: max-height 0.3s ease-in-out;
    /* Smooth transition for height expansion */
@@ -146,6 +146,27 @@
 }
 
 
+/* Media query for tablets and smaller devices */
+@media (max-width: 768px) {
 
+   .readbooks-input-container h3,
+   .readbooks-input-container h5 {
+      font-size: smaller;
+      margin: 5px 0;
 
+   }
 
+   .readbooks-input-container input[type="text"] {
+      width: 90%;
+      margin: 5px auto;
+      display: block;
+
+   }
+
+   .readbooks-input-container button {
+      display: block;
+      margin: 10px auto;
+
+   }
+
+}

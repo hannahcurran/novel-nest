@@ -32,7 +32,7 @@ h3 {
     border: 10px;
 }
 
-.input-container{
+.input-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +49,7 @@ h3 {
     margin: 20px;
     width: 20%;
     max-width: 20%;
+    /* height:50%; */
     border-style: solid;
     border-width: 2px;
     font-family: 'Quicksand', sans-serif;
@@ -74,7 +75,6 @@ h3 {
     border-radius: 5px;
     color: #c5065e;
     background-color: white;
-    
 
 
 }
@@ -84,4 +84,55 @@ h3 {
     border-color: white;
     border-width: 3px;
     color: white;
+}
+
+
+@media (max-width: 768px) {
+    .want-to-read-header {
+        width: 90%;
+    }
+
+    .want-book-card {
+        width: 80%;
+        max-width: none;
+        margin: 10px auto;
+    }
+
+    .wantToReadForm,
+    .input-container {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .input-container input[type="text"] {
+        width: 100%;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+
+    .input-container button {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1,
+    h2,
+    h3 {
+        font-size: smaller;
+    }
+
+    .want-to-read-header img {
+        width: 90%;
+    }
+
+    .want-book-card {
+        width: 100%;
+    }
+
+    .input-container input[type="text"] {
+        width: 95%;
+    }
 }

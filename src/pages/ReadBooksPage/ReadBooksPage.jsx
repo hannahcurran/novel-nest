@@ -161,7 +161,9 @@ export default function ReadBooksPage({ user }) {
                             />
                             <br />
                             <button type="submit" onClick={handleNewRead} className='read-review-add-btn'>Add</button>
+
                         </div>
+
                     </form>
                     <div className="carousel-container">
                         <ul className="readBooks-container" onScroll={handleScroll}>

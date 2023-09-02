@@ -76,3 +76,32 @@ h4 {
     margin-right: 15px; /* Add some spacing to the right of the user greeting */
 }
 
+.hamburger-icon {
+    color: #f70776;
+    cursor: pointer; /* makes it clear it's clickable */
+    font-size: 1.5em; /* adjust if you want the hamburger to be larger or smaller */
+}
+
+/* Mobile and below */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 15%; 
+    }
+
+    h4 {
+        display: none; /* Hide the greeting for space */
+    }
+
+    .nav-link {
+        font-size: 1em; 
+        margin: 0 5px; 
+        display: block; 
+        text-align: center; 
+    }
+
+    .nav > .VStack {
+        background-color: #f5f5f5;
+        width: 100%;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+}

@@ -162,4 +162,52 @@ h3 {
   
   }
 
+/* Media query for tablets and smaller devices */
+@media (max-width: 768px) {
+    .currently-reading-header img {
+        width: 70%;
+    }
 
+    .blurb-text {
+        font-size: 18px;
+    }
+
+    .currently-reading-display-card,
+    .currentlyReadingForm,
+    .input-container {
+        width: 80%;      /* Adjusting width */
+        margin: 10px auto; /* Centering and reducing margin */
+        padding: 15px;  /* Adjusting padding */
+    }
+
+    .add-to-list-btn,
+    .current-book-submit-btn {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .currently-reading-header img {
+        width: 90%;
+    }
+
+    .blurb-text {
+        font-size: 16px;
+    }
+
+    .currently-reading-display-card,
+    .currentlyReadingForm,
+    .input-container {
+        width: 90%;      /* Adjusting width for even smaller screens */
+        margin: 8px auto; /* Centering and reducing margin */
+        padding: 10px;  /* Adjusting padding */
+    }
+
+    .add-to-list-btn,
+    .current-book-submit-btn {
+        font-size: 10px;
+        padding: 3px;
+    }
+}
