@@ -80,11 +80,11 @@ export default function CurrentlyReadingPage({ user }) {
     <img src={NNcurrentlyreading} alt="Currently Reading" style={{ width: '45%' }} />
 </header>
 <br />
-<Box className="blurb-text">
+<div className="blurb-text"><p>
             Got a book in hand? <br />
-             Add it to this list and keep track of all your books!
-            
-        </Box>
+             Keep track here!
+            </p>
+        </div>
 
             {/* <h1>Hi there, {user.name}</h1> */}
         

@@ -10,7 +10,7 @@
    overflow-x: auto;
    white-space: nowrap;
    padding: 10px 0;
-   height: 500px;
+   height: auto;
 }
 
 /* .carousel-arrow-right,
@@ -53,16 +53,19 @@
    border-radius: 15px;
    padding: 20px;
    margin: 20px;
-   width: 30%;
-   /* max-width: 100%; */
    border: 2px solid #e6e6e6;
    font-family: 'Quicksand', sans-serif;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
    transition: box-shadow 0.3s ease-in-out;
-   width: calc(30% - 40px); /* Deducting the margin from width to ensure the card doesn't expand beyond its boundary */
-    transition: max-height 0.3s ease-in-out; /* Smooth transition for height expansion */
-    overflow: hidden; /* Hide any content that exceeds the max-height */
-    max-height: 300px; 
+   /* width: calc(30% - 40px); */
+   max-width: 30%;
+   width:25%;
+   /* Deducting the margin from width to ensure the card doesn't expand beyond its boundary */
+   transition: max-height 0.3s ease-in-out;
+   /* Smooth transition for height expansion */
+   overflow: visible;
+   /* Hide any content that exceeds the max-height */
+   /* max-height: 300px;  */
 }
 
 /* Hide scrollbar for Webkit browsers */
@@ -74,8 +77,10 @@
 .carousel-wrapper::-webkit-scrollbar,
 .carousel-wrapper {
    display: none;
-   -ms-overflow-style: none; /*Edge */
-   scrollbar-width: none; /* Firefox */
+   -ms-overflow-style: none;
+   /*Edge */
+   scrollbar-width: none;
+   /* Firefox */
 }
 
 .read-reviews-header {
@@ -85,7 +90,7 @@
    flex-direction: column;
 }
 
-.readbooks-input-container{
+.readbooks-input-container {
    padding: 20px;
    margin: 5px;
    border: 3px solid #f70776;
@@ -110,12 +115,16 @@
 .readbook-submit-btn,
 .read-review-add-btn {
    font-size: 15px;
-   padding: 5px;
+   padding: 7px;
    margin: 5px;
    font-family: 'Quicksand', sans-serif;
-   border: 2px solid darkgray;
+   border-color: darkgray;
+   border-style: solid;
+   border-width: 2px;
    border-radius: 5px;
    color: #c5065e;
+   background-color: white;
+
 }
 
 .readbook-submit-btn:hover,
@@ -135,3 +144,8 @@
 .review-title {
    color: slategray;
 }
+
+
+
+
+

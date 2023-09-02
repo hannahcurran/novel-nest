@@ -54,14 +54,14 @@ export default function WantToReadPage({ user }) {
     return (
         <main className='main'>
             <>
-            <header className='want-to-read-header'><img src={NNwanttoread} style={{ width: '70%' }}/></header>
+                <header className='want-to-read-header'><img src={NNwanttoread} style={{ width: '70%' }} /></header>
 
-
+                <br />
                 <form className="wantToReadForm">
 
                     <div className="input-container">
-                    <h3>What will you read next?</h3>
-                    <br />
+                        <h3>What will you read next?</h3>
+                        <br />
                         <input
                             type="text"
                             placeholder="Title"
@@ -70,7 +70,6 @@ export default function WantToReadPage({ user }) {
                             onChange={handleChange}
                         />
                         <br />
-                        <br />
                         <input
                             type="text"
                             placeholder="Author"
@@ -78,8 +77,7 @@ export default function WantToReadPage({ user }) {
                             value={newWantBook.author}
                             onChange={handleChange}
                         />
-                         <br />
-                         <br />
+                        <br />
                         <div >
                             <button type="submit" onClick={handleNewWant} className='add-to-list-btn'>Add To List</button>
                         </div>

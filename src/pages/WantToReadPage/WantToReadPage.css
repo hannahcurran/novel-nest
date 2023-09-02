@@ -23,6 +23,22 @@ h3 {
 
 }
 
+.wantToReadForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 10px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .want-book-card {
     background-color: #F5F5F5;
     border-radius: 15px;
@@ -43,13 +59,13 @@ h3 {
 
 }
 
-.want-book-card:hover{
+.want-book-card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .want-book-submit-btn {
     font-size: 15px;
-    padding: 5px;
+    padding: 7px;
     margin: 5px;
     font-family: 'Quicksand', sans-serif;
     border-color: darkgray;
@@ -57,6 +73,9 @@ h3 {
     border-width: 2px;
     border-radius: 5px;
     color: #c5065e;
+    background-color: white;
+    
+
 
 }
 
@@ -66,7 +85,3 @@ h3 {
     border-width: 3px;
     color: white;
 }
-
-
-
-

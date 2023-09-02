@@ -112,7 +112,7 @@ h3 {
 
 .current-book-submit-btn {
     font-size: 15px;
-    padding: 5px;
+    padding: 7px;
     margin: 5px;
     font-family: 'Quicksand', sans-serif;
     border-color: darkgray;
@@ -120,6 +120,7 @@ h3 {
     border-width: 2px;
     border-radius: 5px;
     color: #c5065e;
+    background-color: white;
 
 }
 
@@ -141,6 +142,7 @@ h3 {
     border-width: 2px;
     border-radius: 5px;
     color: #c5065e;
+    background-color: white;
 }
 
 .blurb-text{
@@ -154,6 +156,10 @@ h3 {
   font-weight: 100;
   text-align: center;
   margin: 0;
-  animation: shadows 2.5s ease-in infinite;
+  /* animation: shadows 2.5s ease-in infinite; */
   letter-spacing: 0.1rem;
-}
+
+  
+  }
+
+

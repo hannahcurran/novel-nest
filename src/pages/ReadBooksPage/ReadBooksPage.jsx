@@ -4,15 +4,8 @@ import ReadBookCard from "../../components/ReadBookCard/ReadBookCard";
 import * as readBookAPI from "../../utilities/read-book-api";
 import "./ReadBooksPage.css";
 import '../App/App.css';
-// import {Box} from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import NNreadandreviews from '../../Images/NNreadandreviews.png';
-
-import {
-    Editable,
-    EditableInput,
-    EditableTextarea,
-    EditablePreview,
-} from '@chakra-ui/react'
 
 
 export default function ReadBooksPage({ user }) {
@@ -180,6 +173,7 @@ export default function ReadBooksPage({ user }) {
                                     onToggleFavorite={() => handleToggleFavorite(readBook._id)}
                                     handleSaveEdit={handleSaveEdit}
                                 />
+
                             ))}
                         </ul>
                         {/* <div className="carousel-arrow carousel-arrow-right"
