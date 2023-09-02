@@ -57,7 +57,7 @@ import { Box, Stack, VStack, Editable, EditableInput, EditableTextarea, Editable
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/accordion';
 
 
-export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavorite, handleSaveEdit }) {
+export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavorite, handleSaveEdit, }) {
     const [editedReview, setEditedReview] = useState(readBook.review)
     return (
         <div className="read-book-card">

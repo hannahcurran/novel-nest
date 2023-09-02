@@ -173,7 +173,8 @@ export default function ReadBooksPage({ user }) {
                                     onDelete={handleDeleteBook}
                                     onEdit={handleEdit}
                                     onToggleFavorite={() => handleToggleFavorite(readBook._id)}
-                                    handleSaveEdit={handleSaveEdit}
+                                    handleSaveEdit={handleSaveEdit} 
+                                    // onFinished={handleFinished}
                                 />
 
                             ))}

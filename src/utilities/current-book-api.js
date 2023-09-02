@@ -16,3 +16,6 @@ export async function deleteCurrentBook(bookId) {
     return sendRequest(`${BASE_URL}/deleteCurrentBook/${bookId}`, 'DELETE');
 }
 
+export async function updateBookProgress(bookId, progressData) {
+    return sendRequest(`${BASE_URL}/updateBookProgress/${bookId}`, 'PUT', progressData);
+}

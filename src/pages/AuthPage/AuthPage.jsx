@@ -42,20 +42,40 @@ export default function AuthPage({ setUser }) {
                     </AccordionItem>
                 </Accordion>
                 <br />
+   
                 <Text className='AuthPage-text'>
+                    {/* <h2>Discover Novel Nest: Your Literary Companion 📚</h2> */}
+                    <p>
+                        Dive into a world where reading isn't just a hobby—it's a lifestyle! With Novel Nest, you'll find a cozy corner in the vast universe of books. Let's get you started:
+                    </p>
 
-                    Novel Nest is more than an app—it's your go-to for tracking reads, chirping about insights, and planning literary escapades. <br />
+                    <div className='feature'>
 
+                        <h3>Embrace the Buzz</h3>
+                        <p>Supercharge your reading list with every curated pick.</p>
+                    </div>
 
-                    Embrace the Buzz: Boost your reading list with every pick. <br />
-                    Sing Your Song: Voice your thoughts and share your ratings.<br />
-                    Nest Your Reads: Note upcoming books — your gateway to endless stories. <br />
-                    Soar into the Novel Nest skies and kickstart your bookish journey today!
+                    <div className='feature'>
+
+                        <h3>Sing Your Song</h3>
+                        <p>Express yourself! Share your insights, reviews, and ratings with fellow bookworms.</p>
+                    </div>
+
+                    <div className='feature'>
+
+                        <h3>Nest Your Reads</h3>
+                        <p>Never miss out! Jot down upcoming books and let the stories take flight.</p>
+                    </div>
+
+                    <p>
+                        Ready to ascend into the world of Novel Nest?
+                        <br />
+                        Your literary adventure awaits...
+                    </p>
                     <br />
-                    <br />
-                    [Sign Me Up for the Fun!]
-
+                    <button className='signup-button'>Sign Me Up for the Fun!</button>
                 </Text>
+
                 <SignUpForm setUser={setUser} />
             </VStack>
         </main>

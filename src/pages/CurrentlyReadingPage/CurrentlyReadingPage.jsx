@@ -13,7 +13,7 @@ import NNcurrentlyreading from '../../Images/NNcurrentlyreading.png';
 
 export default function CurrentlyReadingPage({ user }) {
     const [currentlyReadingBooks, setCurrentlyReadingBooks] = useState([]);
-    // const [dailyStreak, setDailyStreak] = useState(user.streak || '1 day! ')
+    const [dailyStreak, setDailyStreak] = useState(user.streak || '1 day! ')
     // const [finishedBooks, setFinishedBooks] = useState([]);
     const [newCurrentBook, setNewCurrentBook] = useState({
         title: '',
@@ -53,6 +53,17 @@ export default function CurrentlyReadingPage({ user }) {
         }
     }
 
+    async function handleProgressUpdate(bookId, progressValue, statusValue) {
+        try {
+            const updatedData = { progress: progressValue, status: statusValue };
+            const updatedBook = await currentBookAPI.updateBookProgress(bookId, updatedData);
+            // Now update the state to reflect the change in the UI, or re-fetch the books
+        } catch (error) {
+            console.error('Error updating book progress:', error);
+        }
+    }
+    
+
     // async function handleFinished(bookId) {
     //     try {
     //         const finishedBook = currentBooks.find(book => book._id === bookId);
@@ -63,6 +74,16 @@ export default function CurrentlyReadingPage({ user }) {
     //         console.error('Error marking book as finished:', error);
     //     }
     // }
+
+
+
+    // const handleFinished = (bookId) => {
+    //     const updatedBooks = bookId.map(book => 
+    //         book._id === bookId ? {...book, status: 'finished'} : book
+    //     );
+    //     setCurrentlyReadingBooks(currentlyReadingBooks);
+    // };
+    
 
 
 
@@ -86,18 +107,15 @@ export default function CurrentlyReadingPage({ user }) {
             </p>
         </div>
 
-            {/* <h1>Hi there, {user.name}</h1> */}
-        
-         {/* <h2>Your Daily Streak: {user.dailyStreak}</h2> */}
-   
-            {/* <h2>Your Current Books:</h2> */}
-         
+        {/*          <h2>Your Daily Streak: {user.dailyStreak}</h2> */}
+                     
                      <ul className="currentBooks-container">
                 {currentlyReadingBooksToShow.map((currentBook, idx) => (
                     <CurrentBookCard key={currentBook._id} currentBook={currentBook}
-                        onDelete={handleDeleteBook} />
-                    //add onFinished={handleFinished} 
-                ))}
+                        onDelete={handleDeleteBook} 
+                        // onFinished={handleFinished}
+                         />
+                                   ))}
             
             <form className="currentlyReadingForm">
                 {/* <h3>Any others?</h3> */}

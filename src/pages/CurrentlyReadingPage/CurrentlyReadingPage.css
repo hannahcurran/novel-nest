@@ -4,6 +4,20 @@
     min-height: 100vh;
 }
 
+.current-book-submit-btn {
+    font-size: 15px;
+    padding: 7px;
+    margin: 5px;
+    font-family: 'Quicksand', sans-serif !important;
+    border-color: darkgray !important;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    color: #c5065e !important;
+    background-color: white !important;
+
+}
+
 .currently-reading-header {
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); */
     display: flex;
@@ -97,39 +111,12 @@ h3 {
 
 }
 
-/* .submit-btn {
-    font-size: 15px;
-    padding: 5px;
-    margin: 5px;
-    font-family: 'Quicksand', sans-serif;
-    border-color: #f70776;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 10px;
-
-
-} */
-
-.current-book-submit-btn {
-    font-size: 15px;
-    padding: 7px;
-    margin: 5px;
-    font-family: 'Quicksand', sans-serif;
-    border-color: darkgray;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 5px;
-    color: #c5065e;
-    background-color: white;
-
-}
-
 .current-book-submit-btn:hover,
 .add-to-list-btn:hover {
-    background-color: #c5065e;
-    border-color: white;
-    border-width: 3px;
-    color: white;
+    background-color: #c5065e !important;
+    border-color: white !important;
+    border-width: 3px !important;
+    color: white !important;
 }
 
 .add-to-list-btn {
@@ -158,9 +145,22 @@ h3 {
   margin: 0;
   /* animation: shadows 2.5s ease-in infinite; */
   letter-spacing: 0.1rem;
-
   
-  }
+
+    }
+.progress-finished-alert{
+    font-size: 30px;
+      font-family: 'Quicksand', sans-serif;
+      
+}
+
+.progress-tracker-title{
+color:slategray;
+}
+
+.progress-tracker{
+    cursor: pointer;
+}
 
 /* Media query for tablets and smaller devices */
 @media (max-width: 768px) {
@@ -211,3 +211,5 @@ h3 {
         padding: 3px;
     }
 }
+
+    

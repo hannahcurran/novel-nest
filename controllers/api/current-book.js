@@ -32,4 +32,17 @@ async function deleteCurrentBook(req, res) {
     }
 }
 
-module.exports = { addCurrentBook, getCurrentBook, deleteCurrentBook };
+async function updateBookProgress(req, res) {
+    try {
+        const bookId = req.params.bookId;
+        const { progress, status } = req.body; 
+
+        const updatedBook = await Book.findByIdAndUpdate(bookId, { progress, status }, { new: true });
+        res.json(updatedBook);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error updating book progress' });
+    }
+}
+
+module.exports = { addCurrentBook, getCurrentBook, deleteCurrentBook, updateBookProgress }; 

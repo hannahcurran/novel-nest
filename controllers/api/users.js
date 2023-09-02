@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
     create,
     login,
-    dailyStreak
+    // updateUserStreak
    };
 
 
@@ -36,33 +36,6 @@ async function login(req, res) {
 
 }
 
-async function dailyStreak(req, res){
-
-    const userId = req.params.userId;
-    try {
-        const user = await User.findById(userId);
-        if (user) {
-            const today = new Date().toISOString().slice(0, 10); 
-            const lastLoginDate = user.lastLogin ? user.lastLogin.toISOString().slice(0, 10) : null;
-
-            if (lastLoginDate !== today) {
-                user.streak += 1;
-            }
-
-            user.lastLogin = new Date();
-            await user.save();
-
-            return res.json(user);
-        } else {
-            return res.status(404).json({ message: 'User not found' });
-        }
-    } catch (error) {
-        console.error('Error updating login:', error);
-        return res.status(500).json({ message: 'Internal server error' });
-    }
-}
-
-
 /*-- Helper Functions --*/
 
 function createJWT(user) {
@@ -73,3 +46,33 @@ function createJWT(user) {
         { expiresIn: '24h' }
     );
 }
+
+
+// const updateUserStreak = async (user) => {
+//     const today = new Date();
+//     today.setHours(0, 0, 0, 0);  // reset time part, to compare dates only
+
+//     if (!user.lastLogin) {
+//         // First time the user logs in
+//         user.lastLogin = today;
+//         user.dailyStreak = 1;
+//     } else {
+//         const lastLoginDate = new Date(user.lastLogin);
+//         lastLoginDate.setHours(0, 0, 0, 0);
+        
+//         const dayDifference = (today - lastLoginDate) / (1000 * 60 * 60 * 24);  // Calculate day difference
+
+//         if (dayDifference === 1) {
+//             // If the user logs in consecutively
+//             user.dailyStreak += 1;
+//             user.lastLogin = today;
+//         } else if (dayDifference > 1) {
+//             // If more than one day has passed since the last login
+//             user.dailyStreak = 1;
+//             user.lastLogin = today;
+//         }
+//         // If dayDifference is 0, no need to change anything, it means the user has already logged in today.
+//     }
+
+//     return user.save();  // Save updates to the database
+// }

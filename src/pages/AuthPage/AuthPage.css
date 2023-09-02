@@ -1,83 +1,70 @@
-.login-form-container {
-  /* remove display: flex; and justify-content: center; */
-  padding: 0;
-  /* adjust as needed */
-  margin: 0;
-  /* adjust as needed */
-  border: none;
-  background-color: transparent;
-  box-shadow: none;
+:root {
+  --primary-color: #f70776;
+  --secondary-font: 'Quicksand', sans-serif;
+}
+
+h1, .AuthPage-text, .auth-h2 {
+  color: var(--primary-color);
+  font-family: var(--secondary-font);
+  text-align: center;
 }
 
 h1 {
-  color: #f70776;
-  font-family: 'Quicksand', sans-serif;
   display: flex;
-  justify-content: center;
-  /* Center horizontally */
+  justify-content: center; /* Center horizontally */
 }
 
 .banner-img {
   border-radius: 15px;
-  /* min-width: 400px; */
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .AuthPage-text {
-  color: #f70776;
-  text-align: center;
   width: 70%;
   margin: 0 auto;
+  font-size: 17px;
   font-family: 'Quicksand', sans-serif;
 }
 
-.signup-form-container,
-.login-form-container {
+.signup-form-container, .login-form-container {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  gap: 10px; /* Set space between children */
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   margin: 5px;
-  font-family: 'Quicksand', sans-serif;
-  border: 3px solid #f70776;
+  border: 3px solid var(--primary-color);
   width: 100%;
   max-width: 400px;
   background-color: #F5F5F5;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Made shadow more subtle */
 }
 
 .submit-btn {
   font-size: 15px;
   padding: 5px;
   margin: 5px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--secondary-font);
   border: 2px solid darkgray;
   border-radius: 5px;
   color: #c5065e;
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover */
 }
 
 .submit-btn:hover {
   background-color: #c5065e;
   border-color: white;
-  border-width: 3px;
   color: white;
 }
 
 .auth-h2 {
-  color: #f70776;
-  text-align: center;
   font-size: 24px;
-  font-family: 'Quicksand', sans-serif;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  align-items: center;  /* Vertical alignment */
   font-weight: 100;
-  text-align: center;
   margin: 0;
   animation: shadows 1.8s ease-in infinite;
   letter-spacing: 0.1rem;
@@ -146,22 +133,16 @@ h1 {
 
 /* Mobile devices */
 @media (max-width: 600px) {
-  .auth-h2 {
-    font-size: 20px;  /* reduced font size for smaller screens */
-  }
+.auth-h2 {
+  font-size: 20px; 
+}
 
-  .AuthPage-text {
-    font-size: 18px; /* reduced font size for better readability */
-  }
+.AuthPage-text {
+  font-size: 18px;
+}
 
-  /* adjust the size of the banner image */
-  .banner-img {
-    width: 90%; /* scale down banner image */
-    height: auto; /* maintain the aspect ratio */
-  }
-
-  /* reduce the animation effect to make it less intense on smaller screens */
-  @keyframes shadows {
-    /* ... retain most of your animation but with reduced shadow values ... */
-  }
+.banner-img {
+  width: 90%; 
+  height: auto; 
+}
 }

@@ -9,7 +9,6 @@ router.post('/addReadBook', ensureLoggedIn, readBooksCtrl.addReadBook);
 router.get('/getReadBook', ensureLoggedIn, readBooksCtrl.getReadBook);
 router.delete('/deleteReadBook/:bookId', ensureLoggedIn, readBooksCtrl.deleteReadBook);
 router.put('/updateReview/:bookId', readBooksCtrl.updateReview);
-// router.get('/getReadBookWithFavoriteStatus/:userId', readBooksCtrl.getReadBookWithFavoriteStatus);
 router.put('/toggleFavoriteStatus/:bookId', readBooksCtrl.toggleFavoriteStatus);
 
 
