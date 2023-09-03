@@ -43,6 +43,15 @@ h1 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Made shadow more subtle */
 }
 
+.signup-form-container input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px 0; 
+}
+
 .submit-btn {
   font-size: 15px;
   padding: 5px;
