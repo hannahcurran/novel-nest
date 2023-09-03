@@ -46,3 +46,17 @@ async function updateBookProgress(req, res) {
 }
 
 module.exports = { addCurrentBook, getCurrentBook, deleteCurrentBook, updateBookProgress }; 
+
+
+
+// exports.updateBook = async (req, res) => {
+//     const bookId = req.params.id;
+//     const updatedFields = req.body;
+
+//     try {
+//         const book = await Book.findByIdAndUpdate(bookId, updatedFields, { new: true });
+//         res.json(book);
+//     } catch (error) {
+//         res.status(400).json({ error: 'Failed to update the book' });
+//     }
+// };

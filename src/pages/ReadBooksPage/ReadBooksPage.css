@@ -11,6 +11,7 @@
    white-space: nowrap;
    padding: 10px 0;
    height: auto;
+   margin: 5px;
 }
 
 /* .carousel-arrow-right,
@@ -25,7 +26,7 @@
    border-radius: 50%;
    z-index: 10;
    color: #c5065e;
-}
+} */
 
 .carousel-arrow-right {
    right: 10px;
@@ -57,15 +58,10 @@
    font-family: 'Quicksand', sans-serif;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
    transition: box-shadow 0.3s ease-in-out;
-   /* width: calc(30% - 40px); */
    max-width: 30%;
    width: 25%;
-   /* Deducting the margin from width to ensure the card doesn't expand beyond its boundary */
-   transition: max-height 0.3s ease-in-out;
-   /* Smooth transition for height expansion */
+   transition: max-height 0.2s ease-in-out;
    overflow: visible;
-   /* Hide any content that exceeds the max-height */
-   /* max-height: 300px;  */
 }
 
 /* Hide scrollbar for Webkit browsers */
@@ -92,7 +88,7 @@
 
 .readbooks-input-container {
    padding: 20px;
-   margin: 5px;
+   margin: 15px;
    border: 3px solid #f70776;
    border-radius: 15px;
    font-family: 'Quicksand', sans-serif;

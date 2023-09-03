@@ -5,7 +5,15 @@ Welcome to Novel Nest, the culmination of Project 4 from my software engineering
 <br><br>
 SCREENSHOTS:<br><br>
 
-![Auth Page](src/Images/authPage-screenshot.png)
+![Auth Page](src/Images/authPage-screenshot.png) 
+<br>
+![Currently Reading Page](src/Images/currentlyReading-screenshot.png)
+<br>
+![Read & Reviews Page](src/Images/readReviews-screenshot.png)
+<br>
+![Want To Read Page](src/Images/wantToRead-screenshot.png)
+<br>
+![Mobile View](src/Images/mobile-screenshot.png)
 
 <br><br>
 GETTING STARTED & PLANNING:<br><br>
@@ -35,12 +43,13 @@ TECHNOLOGIES USED: <br>
 <br><br>
 BRIEF: <br>
 ☐ Build a working full-stack, single-page application hosted on Heroku. <br>
+
 ☐ Incorporate the technologies of the MERN-stack:<br>
 • MongoDB/Mongoose<br>
 • Express<br>
 • React<br>
 • Node <br>
-<br>
+
 ☐ Have a well-styled interactive front-end.<br>
 
 ☐ Communicates with the Express backend via AJAX.<br>
@@ -58,7 +67,8 @@ BUILD CODE & PROCESS<br><br>
 
 ☐ The "main" Mongoose model is the bookSchema - this is the backbone of the app's functionality. This model helps structure and store essential data about a user's reading list:
 <br>
-"""
+
+```
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const { ObjectId } = require('mongodb');
@@ -75,11 +85,11 @@ const bookSchema = new Schema({
 });
 
 module.exports = mongoose.model('Book', bookSchema);
-"""
+```
 <br>
 <br>
 
-☐ The ReadBookCard React component holds a special place in the architecture of Novel Nest, and here's why it's my favourite:<br>
+☐ The ReadBookCard React component holds a major place in the architecture of Novel Nest, and here's why it's my favourite:<br>
 
 • Dynamic Interaction: With the incorporation of Chakra UI's Accordion elements, this component introduces a beautiful layer of interactivity. Users can expand or collapse their reviews, making the interface less cluttered and more intuitive.<br>
 
@@ -89,7 +99,7 @@ module.exports = mongoose.model('Book', bookSchema);
 
 • Cohesiveness: The component efficiently manages several functionalities, from displaying book details, editing reviews, toggling favorite status, to deleting a book. Yet, it maintains a clear and clean structure. This harmonious blend of utility and design speaks to the power of thoughtful React component development.<br>
 
-"""
+```
 import React, { useState } from "react";
 import { Box, Editable, EditableTextarea, EditablePreview } from '@chakra-ui/react';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/accordion';
@@ -139,11 +149,12 @@ export default function ReadBookCard({ readBook, onDelete, onEdit, onToggleFavor
         </div>
     )
 }
-"""
+```
 
 <br><br>
 CHALLENGES: <br><br>
-During the project, I hit some blockers at times when coding between the backend and frontend within the unified codebase. One thing that gave me a real challenge was adding a daily streak tracker. It's not fully ready yet, but I'll keep working on that! <br> 
+During the project, I hit some blockers at times when coding between the backend and frontend within the unified codebase. One thing that gave me a real challenge was adding a daily streak tracker. It's not fully ready yet, but I'll keep working on that! <br> <br>
+
 When it came to styling, that was another hurdle. I leaned on CSS and incorporated some Chakra UI, but achieving the perfect design feel wasn't easy. Design and styling are definitely areas I want to dive deeper into. More practice will surely help me get better at it!
 
 <br><br>
@@ -152,6 +163,9 @@ During the development of this project, I'm particularly proud of constructing a
 
 <br><br>
 BUGS:<br><br>
+☐ The progress trackers on the Currently Reading Page are not saving to the database yet and reset to 0% when the page is refreshed - this is something I am still working on at the time of presenting. <br>
+
+☐ The Accordion drop down for Reviews is only displaying the first line of the review unless it is clicked (then the whole review will appear in an editable field). I have been working and trying different methods to have the review be fully visible once the accordion panel drops down, however, this is proving to be a trickier styling issue than expected and I'm still working on this!<br>
 
 <br><br>
 KEY LEARNINGS & TAKEAWAYS: <br><br>
@@ -168,7 +182,15 @@ KEY LEARNINGS & TAKEAWAYS: <br><br>
 
 <br><br>
 FUTURE ENHANCEMENTS & CONTINUOUS IMPROVEMENT:<br><br>
+
+☐  To have a function so that when the progress tracker on Current Book Cards reaches 100% (ie a book is finished), the book is moved out of the 'Currently Reading'/ Current Book Card page and displayed on a Read Book Card. Currently this has to be done manually by the user. 
+
+☐ To have a 'Daily Streak' feature that updates when the user logs in - to encourage the user's engagement with the app.  <br>
+
 ☐ Develop a feature to be able to connect with friends and other users through the app and for users to be able to have the option to allow other users to view their lists. <br>
+
 ☐ To incorporate an API that could offer book recommendations based on what the user has been reading and favorited in their 'Read Books' page. <br>
-☐ To have a 'Daily Streak' feature that updates when the user logs in - to encourage the user's engagement with the app.  
+
+
+
 

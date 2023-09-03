@@ -27,14 +27,10 @@ export default function App() {
         ) : (
           <AuthPage setUser={setUser} />
         )}
-      </main> 
-  
-      {/* <footer className='footer'>
-        Questions about Novel Nest or need some reading recommendations? Send us a message at: hello@novelnestreads.co.uk
-      </footer> */}
+      </main>
     </>
   );
-  
+
 
 
 }

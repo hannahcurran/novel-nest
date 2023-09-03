@@ -96,7 +96,8 @@ export default function ReadBooksPage({ user }) {
         }
     }
 
-    //function for arrow for carousel scrolling
+
+    // for arrow for carousel scrolling
     function scrollRight() {
         const container = document.querySelector(".readBooks-container");
         container.scrollLeft += 300;
@@ -126,6 +127,12 @@ export default function ReadBooksPage({ user }) {
                 <header className='read-reviews-header'>
                     <img src={NNreadandreviews} alt="Read" style={{ width: '35%' }} />
                 </header>
+                <br />
+                <div className="blurb-text"><p>
+            Your Read Books  <br />
+             Keep track here!
+            </p>
+            </div>
                 <div class="reviews-row">
                     <form className="readBookForm">
 
@@ -161,7 +168,6 @@ export default function ReadBooksPage({ user }) {
                             />
                             <br />
                             <button type="submit" onClick={handleNewRead} className='read-review-add-btn'>Add</button>
-
                         </div>
 
                     </form>
@@ -175,14 +181,13 @@ export default function ReadBooksPage({ user }) {
                                     onToggleFavorite={() => handleToggleFavorite(readBook._id)}
                                     handleSaveEdit={handleSaveEdit} 
                                     // onFinished={handleFinished}
-                                />
-
+                               />
                             ))}
                         </ul>
                         {/* <div className="carousel-arrow carousel-arrow-right"
                         onClick={scrollRight}
-                        style={{ display: showRightArrow ? 'block' : 'none' }}> */}
-                        →
+                        style={{ display: showRightArrow ? 'block' : 'none' }}> → */}
+                        
                     </div>
                     {/* <div className="carousel-arrow carousel-arrow-left"
                         onClick={scrollLeft}
