@@ -51,19 +51,19 @@ export default function AuthPage({ setUser }) {
 
                     <div className='feature'>
 
-                        <h3>Embrace the Buzz</h3>
+                        <h4>Embrace the Buzz</h4>
                         <p>Supercharge your reading list with every curated pick.</p>
                     </div>
 
                     <div className='feature'>
 
-                        <h3>Sing Your Song</h3>
+                        <h4>Sing Your Song</h4>
                         <p>Express yourself! Share your insights, reviews, and ratings with fellow bookworms.</p>
                     </div>
 
                     <div className='feature'>
 
-                        <h3>Nest Your Reads</h3>
+                        <h4>Nest Your Reads</h4>
                         <p>Never miss out! Jot down upcoming books and let the stories take flight.</p>
                     </div>
 
